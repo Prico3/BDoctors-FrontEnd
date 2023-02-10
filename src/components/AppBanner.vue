@@ -21,12 +21,28 @@ export default {
         </div>
 
 
-        <div class="d-flex justify-content-around">
+        <div class="d-flex justify-content-around py-4">
             <div class="container">
-
-                <div class="row">
-                    <div class="text-center p-4 col-lg-4 col-sm-6">
-                        <div class="card" style="width: 18rem;">
+                <ul class="nav nav-tabs mb-3">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">All</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-light" href="#">Cardiologist</a>
+                    </li>
+                    <li class="nav-item ">
+                        <a class="nav-link  text-light" href="#">Oncologist</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link  text-light" href="#">Dermatologist</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link  text-light" href="#">Gynecologist</a>
+                    </li>
+                </ul>
+                <div class="row g-5">
+                    <div class="text-center   col-lg-4 col-md-6 col-sm-12">
+                        <div class="card">
                             <img src="../assets/img/doctor.jpg" class="card-img-top" alt="...">
                             <div class="card-body">
                                 <h5 class="card-title">Doctor Name</h5>
@@ -42,8 +58,8 @@ export default {
                             </div>
                         </div>
                     </div>
-                    <div class="text-center p-4 col-lg-4 col-sm-6 ">
-                        <div class="card" style="width: 18rem;">
+                    <div class="text-center  col-lg-4 col-md-6 col-sm-12 ">
+                        <div class="card">
                             <img src="../assets/img/doctor.jpg" class="card-img-top" alt="...">
                             <div class="card-body">
                                 <h5 class="card-title">Doctor Name</h5>
@@ -59,8 +75,8 @@ export default {
                             </div>
                         </div>
                     </div>
-                    <div class="text-center p-4 col-lg-4 col-sm-6">
-                        <div class="card" style="width: 18rem;">
+                    <div class="text-center  col-lg-4 col-md-6 col-sm-12">
+                        <div class="card">
                             <img src="../assets/img/doctor.jpg" class="card-img-top" alt="...">
                             <div class="card-body">
                                 <h5 class="card-title">Doctor Name</h5>
@@ -76,8 +92,8 @@ export default {
                             </div>
                         </div>
                     </div>
-                    <div class="text-center p-4 col-lg-4 col-sm-6">
-                        <div class="card" style="width: 18rem;">
+                    <div class="text-center  col-lg-4 col-md-6 col-sm-12">
+                        <div class="card">
                             <img src="../assets/img/doctor.jpg" class="card-img-top" alt="...">
                             <div class="card-body">
                                 <h5 class="card-title">Doctor Name</h5>
@@ -93,8 +109,8 @@ export default {
                             </div>
                         </div>
                     </div>
-                    <div class="text-center p-4 col-lg-4 col-sm-6">
-                        <div class="card" style="width: 18rem;">
+                    <div class="text-center  col-lg-4 col-md-6 col-sm-12">
+                        <div class="card">
                             <img src="../assets/img/doctor.jpg" class="card-img-top" alt="...">
                             <div class="card-body">
                                 <h5 class="card-title">Doctor Name</h5>
@@ -110,8 +126,8 @@ export default {
                             </div>
                         </div>
                     </div>
-                    <div class="text-center p-4 col-lg-4 col-sm-6">
-                        <div class="card" style="width: 18rem;">
+                    <div class="text-center  col-lg-4 col-md-6 col-sm-12">
+                        <div class="card">
                             <img src="../assets/img/doctor.jpg" class="card-img-top" alt="...">
                             <div class="card-body">
                                 <h5 class="card-title">Doctor Name</h5>
