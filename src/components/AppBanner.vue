@@ -20,6 +20,118 @@ export default {
 
         </div>
 
+
+        <div class="d-flex justify-content-around">
+            <div class="container">
+
+                <div class="row">
+                    <div class="text-center p-4 col-lg-4 col-sm-6">
+                        <div class="card" style="width: 18rem;">
+                            <img src="../assets/img/doctor.jpg" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">Doctor Name</h5>
+                                <p class="card-text">Address</p>
+                            </div>
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item">Specialization</li>
+
+                            </ul>
+                            <div class="card-body">
+                                <a href="#" class="card-link">Send a Message</a>
+                                <a href="#" class="card-link">See Reviews</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="text-center p-4 col-lg-4 col-sm-6 ">
+                        <div class="card" style="width: 18rem;">
+                            <img src="../assets/img/doctor.jpg" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">Doctor Name</h5>
+                                <p class="card-text">Address</p>
+                            </div>
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item">Specialization</li>
+
+                            </ul>
+                            <div class="card-body">
+                                <a href="#" class="card-link">Send a Message</a>
+                                <a href="#" class="card-link">See Reviews</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="text-center p-4 col-lg-4 col-sm-6">
+                        <div class="card" style="width: 18rem;">
+                            <img src="../assets/img/doctor.jpg" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">Doctor Name</h5>
+                                <p class="card-text">Address</p>
+                            </div>
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item">Specialization</li>
+
+                            </ul>
+                            <div class="card-body">
+                                <a href="#" class="card-link">Send a Message</a>
+                                <a href="#" class="card-link">See Reviews</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="text-center p-4 col-lg-4 col-sm-6">
+                        <div class="card" style="width: 18rem;">
+                            <img src="../assets/img/doctor.jpg" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">Doctor Name</h5>
+                                <p class="card-text">Address</p>
+                            </div>
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item">Specialization</li>
+
+                            </ul>
+                            <div class="card-body">
+                                <a href="#" class="card-link">Send a Message</a>
+                                <a href="#" class="card-link">See Reviews</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="text-center p-4 col-lg-4 col-sm-6">
+                        <div class="card" style="width: 18rem;">
+                            <img src="../assets/img/doctor.jpg" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">Doctor Name</h5>
+                                <p class="card-text">Address</p>
+                            </div>
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item">Specialization</li>
+
+                            </ul>
+                            <div class="card-body">
+                                <a href="#" class="card-link">Send a Message</a>
+                                <a href="#" class="card-link">See Reviews</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="text-center p-4 col-lg-4 col-sm-6">
+                        <div class="card" style="width: 18rem;">
+                            <img src="../assets/img/doctor.jpg" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">Doctor Name</h5>
+                                <p class="card-text">Address</p>
+                            </div>
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item">Specialization</li>
+
+                            </ul>
+                            <div class="card-body">
+                                <a href="#" class="card-link">Send a Message</a>
+                                <a href="#" class="card-link">See Reviews</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
     </div>
 </template>
 
