@@ -2,6 +2,7 @@
 import axios from 'axios';
 import AppHeader from './components/AppHeader.vue';
 import AppBanner from './components/AppBanner.vue';
+import AppMain from './components/AppMain.vue';
 export default {
   name: 'App',
   data() {
@@ -11,7 +12,8 @@ export default {
   },
   components: {
     AppHeader,
-    AppBanner
+    AppBanner,
+    AppMain
   },
   methods: {
 
@@ -22,6 +24,7 @@ export default {
 <template>
   <AppHeader />
   <AppBanner />
+  <AppMain />
 </template>
 
 <style lang="scss">
