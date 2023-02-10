@@ -1,5 +1,7 @@
 <script>
 import axios from 'axios';
+import AppHeader from './components/AppHeader.vue';
+
 export default {
   name: 'App',
   data() {
@@ -8,7 +10,7 @@ export default {
     }
   },
   components: {
-
+    AppHeader
   },
   methods: {
 
@@ -17,7 +19,7 @@ export default {
 </script>
 
 <template>
-  ciao
+  <AppHeader />
 </template>
 
 <style lang="scss">
