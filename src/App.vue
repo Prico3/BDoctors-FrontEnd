@@ -1,7 +1,7 @@
 <script>
 import axios from 'axios';
 import AppHeader from './components/AppHeader.vue';
-
+import AppBanner from './components/AppBanner.vue';
 export default {
   name: 'App',
   data() {
@@ -10,7 +10,8 @@ export default {
     }
   },
   components: {
-    AppHeader
+    AppHeader,
+    AppBanner
   },
   methods: {
 
@@ -20,6 +21,7 @@ export default {
 
 <template>
   <AppHeader />
+  <AppBanner />
 </template>
 
 <style lang="scss">
