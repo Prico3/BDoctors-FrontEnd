@@ -24,9 +24,9 @@ export default {
 
 <template>
     <header>
-        <nav class="navbar  navbar-expand-lg  bg-primary">
+        <nav class="navbar  navbar-expand-lg bg">
             <div class="container-fluid">
-                <a class="navbar-brand text-light" href="#">BDoctors</a>
+                <a class="navbar-brand text-light fs-1 hvr" href="#">BDoctors</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                     aria-expanded="false" aria-label="Toggle navigation">
@@ -59,3 +59,17 @@ export default {
         </nav>
     </header>
 </template>
+
+<style lang="scss" scoped>
+.bg {
+    background: rgb(2, 0, 36);
+    background: linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(25, 70, 172, 1) 0%, rgba(0, 215, 255, 1) 100%);
+}
+
+.hvr {
+    &:hover {
+        transform: scale(1.1);
+        transition: 2s;
+    }
+}
+</style>

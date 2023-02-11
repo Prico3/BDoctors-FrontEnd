@@ -10,19 +10,30 @@ export default {
 </script>
 
 <template>
-    <div class="container-fluid">
+    <div class="container-fluid bg">
         <div class="container py-5">
-            <h2 class="text-center">How it Works?</h2>
+            <!-- <h2 class="text-center fts">How it Works?</h2> -->
+
+
+            <div class="waviy text-center">
+
+                <h2 class="text-center">How it </h2>
+                <span style="--i:9">Works</span>
+
+            </div>
+
+
+
             <div class="d-flex justify-content-around">
                 <div class="row">
-                    <div class="text-center p-4 col-lg-4 col-sm-12">
+                    <div class="text-center p-4 col-lg-4 col-sm-12 hvr">
                         <img class="mb-3" src="../assets/img/consultazione-sito.svg" alt="">
                         <h5>Send a message</h5>
                         <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fugiat odio officiis id voluptatum
                             magnam, tempora facere esse nam inventore? Vitae voluptatibus qui officiis voluptates
                             praesentium? Autem illum impedit officiis iste.</p>
                     </div>
-                    <div class="text-center p-4 col-lg-4 col-sm-12 ">
+                    <div class="text-center p-4 col-lg-4 col-sm-12 hvr">
                         <img class="mb-3" src="../assets/img/consultazione-sito.svg" alt="">
                         <h5>Book the visit</h5>
                         <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nam, totam repudiandae? Esse
@@ -31,7 +42,7 @@ export default {
                             modi
                             minima nobis iure! Vel!</p>
                     </div>
-                    <div class="text-center p-4 col-lg-4 col-sm-12">
+                    <div class="text-center p-4 col-lg-4 col-sm-12 hvr">
                         <img class="mb-3" src="../assets/img/consultazione-sito.svg" alt="">
                         <h5>Leave a review</h5>
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore sit doloribus eius dolore
@@ -46,10 +57,106 @@ export default {
         </div>
     </div>
 
+
+    <div class="container-fluid bg2">
+        <div class="container py-5">
+            <div class="waviy text-center">
+
+                <h2 class="text-center">About </h2>
+                <span style="--i:9">Us</span>
+
+            </div>
+
+            <div class="d-flex justify-content-around">
+                <div class="row">
+                    <div class="d-flex text-center p-4 col-lg-12 col-sm-12 hvr">
+                        <img class="mb-3" src="../assets/img/consultazione-sito.svg" alt="">
+                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fugiat odio officiis id voluptatum
+                            magnam, tempora facere esse nam inventore? Vitae voluptatibus qui officiis voluptates
+                            praesentium? Autem illum impedit officiis iste.</p>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
 </template>
 
 <style lang="scss" scoped>
 img {
     max-width: 150px;
+}
+
+.bg {
+    background: rgb(2, 0, 36);
+    background: linear-gradient(180deg, rgba(2, 0, 36, 1) 0%, rgba(255, 255, 255, 1) 0%, rgba(67, 166, 255, 1) 100%);
+}
+
+.bg2 {
+
+    background: rgb(2, 0, 36);
+    background: linear-gradient(0deg, rgba(2, 0, 36, 1) 0%, rgba(255, 255, 255, 1) 0%, rgba(67, 166, 255, 1) 100%);
+}
+
+h2 {
+    display: inline;
+    color: rgba(25, 70, 172, 1)
+}
+
+.hvr {
+    &:hover {
+        transform: scale(.9);
+        transition: 2s;
+    }
+}
+
+
+
+@import url('https://fonts.googleapis.com/css2?family=Alfa+Slab+One&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #151719;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.waviy {
+    position: relative;
+
+    font-size: 60px;
+}
+
+.waviy span {
+    font-family: 'Alfa Slab One', cursive;
+    position: relative;
+    display: inline-block;
+    color: rgba(25, 70, 172, 1);
+    animation: waviy 1s infinite;
+    animation-delay: calc(.1s * var(--i));
+
+}
+
+@keyframes waviy {
+
+    0%,
+    40%,
+    100% {
+        transform: translateY(0)
+    }
+
+    20% {
+        transform: translateY(-20px)
+    }
 }
 </style>
