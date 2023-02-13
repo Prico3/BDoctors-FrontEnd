@@ -7,23 +7,40 @@ export default {
 <template>
     <div class="row g-5">
         <div class="text-center col-lg-4 col-md-6 col-sm-12">
+            <!-- CARD -->
             <div class="card">
-                <a class="special ms_btn px-2" href=""><i class="fa-solid fa-star"></i> 5.0</a>
+                <!-- star - reviews  -->
+                <a class="special ms_btn px-2" href="">
+                    <i class="fa-solid fa-star"></i>
+                    5.0
+                </a>
+
+                <!-- profile photo -->
                 <img src="../assets/img/doctor.jpg" class="card-img-top" alt="...">
+
                 <div class="card-body">
+                    <!-- doctor name -->
                     <h5 class="card-title">Doctor Name</h5>
+                    <!-- doctor address -->
                     <p class="card-text">Address</p>
                 </div>
+
                 <ul class="list-group list-group-flush">
+                    <!-- specialization -->
                     <li class="list-group-item">Specialization</li>
 
                 </ul>
+
                 <div class="card-body">
+                    <!-- send message -->
                     <a href="#" class="card-link">Send a Message</a>
+                    <!-- send reviews -->
                     <a href="#" class="card-link">Send Reviews</a>
 
                 </div>
             </div>
+            <!-- /CARD -->
+
         </div>
 
         <div class="text-center  col-lg-4 col-md-6 col-sm-12 ">

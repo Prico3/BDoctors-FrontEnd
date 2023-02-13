@@ -18,29 +18,33 @@ export default {
 </script>
 
 <template>
+
     <div class="container-fluid bg">
 
         <div class="container text-light  py-4">
-
+            <!-- TITLE -->
             <div class="waviy text-center">
-
                 <h1 class="text-center">Find your </h1>
                 <span style="--i:9">doctor</span>
-
             </div>
+            <!-- /TITLE -->
 
+            <!-- SEARCH -->
             <div class="ms_container d-flex justify-content-center mt-4 ">
                 <form class="d-flex justify-content-center w-50 p-2" role="search">
                     <input class="form-control me-2" type="search" placeholder="Find your Doctor" aria-label="Search">
                     <button class="btn btn-light" type="submit">Search</button>
                 </form>
             </div>
+            <!-- /SEARCH -->
+
         </div>
 
 
         <div class="d-flex justify-content-around py-4">
 
             <div class="container">
+                <!-- SPECIALIZATIONS -->
                 <ul class="nav nav-tabs mb-3">
                     <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="#">All</a>
@@ -58,8 +62,11 @@ export default {
                         <a class="nav-link  text-light" href="#">Gynecologist</a>
                     </li>
                 </ul>
+                <!-- /SPECIALIZATIONS -->
+
 
                 <AppCard />
+
             </div>
         </div>
     </div>

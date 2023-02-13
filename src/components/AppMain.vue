@@ -10,22 +10,23 @@ export default {
 </script>
 
 <template>
+
+    <!-- HOW IT WORKS -->
     <div class="container-fluid bg">
         <div class="container py-5">
             <!-- <h2 class="text-center fts">How it Works?</h2> -->
 
-
+            <!-- title -->
             <div class="waviy text-center">
-
                 <h2 class="text-center">How it </h2>
                 <span style="--i:9">Works</span>
-
             </div>
 
 
 
             <div class="d-flex justify-content-around">
                 <div class="row">
+                    <!-- send a message -->
                     <div class="text-center p-4 col-lg-4 col-sm-12 hvr">
                         <img class="mb-3" src="../assets/img/consultazione-sito.svg" alt="">
                         <h5>Send a message</h5>
@@ -33,6 +34,7 @@ export default {
                             magnam, tempora facere esse nam inventore? Vitae voluptatibus qui officiis voluptates
                             praesentium? Autem illum impedit officiis iste.</p>
                     </div>
+                    <!-- book the visit -->
                     <div class="text-center p-4 col-lg-4 col-sm-12 hvr">
                         <img class="mb-3" src="../assets/img/consultazione-sito.svg" alt="">
                         <h5>Book the visit</h5>
@@ -42,6 +44,7 @@ export default {
                             modi
                             minima nobis iure! Vel!</p>
                     </div>
+                    <!-- leave a review -->
                     <div class="text-center p-4 col-lg-4 col-sm-12 hvr">
                         <img class="mb-3" src="../assets/img/consultazione-sito.svg" alt="">
                         <h5>Leave a review</h5>
@@ -51,20 +54,20 @@ export default {
                             reprehenderit ad optio.</p>
                     </div>
                 </div>
-
             </div>
 
         </div>
     </div>
+    <!-- /HOW IT WORKS -->
 
 
+    <!-- ABOUT US -->
     <div class="container-fluid bg2">
         <div class="container py-5">
+            <!-- title -->
             <div class="waviy text-center">
-
                 <h2 class="text-center">About </h2>
                 <span style="--i:9">Us</span>
-
             </div>
 
             <div class="d-flex justify-content-around">
@@ -75,46 +78,43 @@ export default {
                             magnam, tempora facere esse nam inventore? Vitae voluptatibus qui officiis voluptates
                             praesentium? Autem illum impedit officiis iste.</p>
                     </div>
-
                 </div>
-
             </div>
-
         </div>
     </div>
+    <!-- /ABOUT US -->
 
+    <!-- ARE YOU A DOCTOR -->
     <div class="container-fluid bg">
         <div class="container py-5">
+            <!-- title -->
             <div class="waviy text-center">
-
                 <h2 class="text-center">Are you a </h2>
                 <span style="--i:9">Doctor?</span>
-
             </div>
 
             <div class="d-flex justify-content-around">
                 <div class="row">
                     <div class="p-4 col-lg-6 col-sm-6 hvr">
+                        <!-- text -->
                         <p>
                             Sign up and reach new patient. <br>
-
                             More than 2 million patients look for their doctor every month on BDoctors, the first site
                             in Italy for visitors and number of bookings.
                         </p>
-
+                        <!-- list -->
                         <p class="mt-3">With BDoctors you can:</p>
                         <ul class="ms-4">
                             <li>Receive bookings from new patients</li>
                             <li>Improve your online visibility and reputation</li>
                             <li>You have our staff always available to help you</li>
                         </ul>
-
+                        <!-- register button -->
                         <a href="" class="btn btn-light text-primary mt-3">Register</a>
-
-
                     </div>
-                    <div class="d-flex justify-content-center p-4 col-lg-6 col-sm-6 hvr">
 
+                    <!-- img -->
+                    <div class="d-flex justify-content-center p-4 col-lg-6 col-sm-6 hvr">
                         <img class="mb-3" src="../assets/img/consultazione-sito.svg" alt="">
                     </div>
 
@@ -124,6 +124,8 @@ export default {
 
         </div>
     </div>
+    <!-- /ARE YOU A DOCTOR -->
+
 
 </template>
 

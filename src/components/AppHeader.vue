@@ -24,7 +24,10 @@ export default {
 
 <template>
     <header>
+        <!-- NAVBAR -->
         <nav class="navbar  navbar-expand-lg bg">
+
+            <!-- LOGO -->
             <div class="container-fluid">
                 <a class="navbar-brand text-light fs-1 hvr" href="#">BDoctors</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
@@ -33,6 +36,9 @@ export default {
                     <span class="navbar-toggler-icon"></span>
                 </button>
             </div>
+            <!-- LOGO -->
+
+
             <!-- <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
                     <li class="nav-item" v-for="(navItem, index) in navigation" :key="index">
@@ -46,6 +52,7 @@ export default {
                 </ul>
             </div> -->
 
+            <!-- BUTTONS -->
             <div class="collapse navbar-collapse " id="navbarNav">
                 <ul class="navbar-nav">
                     <li class="nav-item me-4">
@@ -56,7 +63,12 @@ export default {
                     </li>
                 </ul>
             </div>
+            <!-- /BUTTONS -->
+
+
         </nav>
+        <!-- /NAVBAR -->
+
     </header>
 </template>
 
