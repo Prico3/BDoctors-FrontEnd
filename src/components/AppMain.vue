@@ -1,4 +1,5 @@
 <script>
+
 export default {
     name: 'AppMain',
     data() {
@@ -115,7 +116,7 @@ export default {
 
                     <!-- img -->
                     <div class="d-flex justify-content-center p-4 col-lg-6 col-sm-6 hvr">
-                        <img class="mb-3" src="../assets/img/consultazione-sito.svg" alt="">
+                        <img class="mb-3" src="../assets/img/doctor-1-removebg-preview.png" alt="">
                     </div>
 
                 </div>

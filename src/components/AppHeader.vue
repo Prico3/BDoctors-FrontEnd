@@ -56,10 +56,10 @@ export default {
             <div class="collapse navbar-collapse " id="navbarNav">
                 <ul class="navbar-nav">
                     <li class="nav-item me-4">
-                        <a href="" class="btn btn-light text-primary">Login</a>
+                        <a href="http://localhost:8000" class="btn btn-light text-primary">Login</a>
                     </li>
                     <li class="nav-item me-4">
-                        <a href="" class="btn btn-light text-primary">Register</a>
+                        <a href="http://localhost:8000/register" class="btn btn-light text-primary">Register</a>
                     </li>
                 </ul>
             </div>

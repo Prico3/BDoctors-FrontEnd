@@ -1,14 +1,20 @@
 <script>
+
 export default {
-    name: "AppCard"
+    name: "AppCard",
+    props: {
+        doctor: Object
+    }
 }
+
 </script>
 
 <template>
     <div class="row g-5">
         <div class="text-center col-lg-4 col-md-6 col-sm-12">
             <!-- CARD -->
-            <div class="card">
+
+            <div class="card" v-if="doctor.profile_id !== null">
                 <!-- star - reviews  -->
                 <a class="special ms_btn px-2" href="">
                     <i class="fa-solid fa-star"></i>
@@ -20,14 +26,14 @@ export default {
 
                 <div class="card-body">
                     <!-- doctor name -->
-                    <h5 class="card-title">Doctor Name</h5>
+                    <h5 class="card-title">{{ doctor.name }}</h5>
                     <!-- doctor address -->
-                    <p class="card-text">Address</p>
+                    <p class="card-text">{{ doctor.studio_address }}</p>
                 </div>
 
                 <ul class="list-group list-group-flush">
                     <!-- specialization -->
-                    <li class="list-group-item">Specialization</li>
+                    <li class="list-group-item">{{ doctor.specialization }}</li>
 
                 </ul>
 
@@ -43,7 +49,7 @@ export default {
 
         </div>
 
-        <div class="text-center  col-lg-4 col-md-6 col-sm-12 ">
+        <!-- <div class="text-center  col-lg-4 col-md-6 col-sm-12 ">
             <div class="card">
                 <img src="../assets/img/doctor.jpg" class="card-img-top" alt="...">
                 <div class="card-body">
@@ -131,7 +137,7 @@ export default {
                     <a href="#" class="card-link">See Reviews</a>
                 </div>
             </div>
-        </div>
+        </div> -->
     </div>
 </template>
 

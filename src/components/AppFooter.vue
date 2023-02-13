@@ -8,8 +8,7 @@ export default {
     <nav class="navbar navbar-expand-lg bg-body-tertiary py-5">
         <div class="container-fluid">
             <div class="container d-flex justify-content-center">
-
-
+                <!-- NAVBAR -->
                 <div id="navbarNav ">
                     <ul class="navbar-nav fs-5 ">
                         <li class="nav-item me-4">
@@ -26,12 +25,11 @@ export default {
                         </li>
                     </ul>
                 </div>
-
-
+                <!-- /NAVBAR -->
             </div>
-
         </div>
     </nav>
+    <!-- small text -->
     <p class="text-center py-2">Made with Love by Team 2 Aka The Code Commanders</p>
 </template>
 

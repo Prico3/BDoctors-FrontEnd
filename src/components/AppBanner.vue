@@ -1,18 +1,29 @@
 <script>
+import axios from 'axios';
+
 import AppCard from './AppCard.vue';
 export default {
     name: "AppBanner",
 
     data() {
         return {
-
+            docData: "",
         }
     },
     components: {
         AppCard
     },
     methods: {
-
+        getDoctors() {
+            axios
+                .get('http://localhost:8000/api/doc')
+                .then(resp => {
+                    this.docData = resp.data.doctors; console.log(this.docData);
+                });
+        }
+    },
+    created() {
+        this.getDoctors()
     }
 }
 </script>
@@ -64,8 +75,10 @@ export default {
                 </ul>
                 <!-- /SPECIALIZATIONS -->
 
+                <div v-for="(doc, index) in docData" :key="index">
 
-                <AppCard />
+                    <AppCard :doctor="doc" />
+                </div>
 
             </div>
         </div>
