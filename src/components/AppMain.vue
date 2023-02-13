@@ -83,6 +83,48 @@ export default {
         </div>
     </div>
 
+    <div class="container-fluid bg">
+        <div class="container py-5">
+            <div class="waviy text-center">
+
+                <h2 class="text-center">Are you a </h2>
+                <span style="--i:9">Doctor?</span>
+
+            </div>
+
+            <div class="d-flex justify-content-around">
+                <div class="row">
+                    <div class="p-4 col-lg-6 col-sm-6 hvr">
+                        <p>
+                            Sign up and reach new patient. <br>
+
+                            More than 2 million patients look for their doctor every month on BDoctors, the first site
+                            in Italy for visitors and number of bookings.
+                        </p>
+
+                        <p class="mt-3">With BDoctors you can:</p>
+                        <ul class="ms-4">
+                            <li>Receive bookings from new patients</li>
+                            <li>Improve your online visibility and reputation</li>
+                            <li>You have our staff always available to help you</li>
+                        </ul>
+
+                        <a href="" class="btn btn-light text-primary mt-3">Register</a>
+
+
+                    </div>
+                    <div class="d-flex justify-content-center p-4 col-lg-6 col-sm-6 hvr">
+
+                        <img class="mb-3" src="../assets/img/consultazione-sito.svg" alt="">
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
 </template>
 
 <style lang="scss" scoped>
@@ -108,7 +150,7 @@ h2 {
 
 .hvr {
     &:hover {
-        transform: scale(.9);
+        transform: scale(1.05);
         transition: 2s;
     }
 }

@@ -1,6 +1,19 @@
 <script>
+import AppCard from './AppCard.vue';
 export default {
-    name: "AppBanner"
+    name: "AppBanner",
+
+    data() {
+        return {
+
+        }
+    },
+    components: {
+        AppCard
+    },
+    methods: {
+
+    }
 }
 </script>
 
@@ -46,115 +59,7 @@ export default {
                     </li>
                 </ul>
 
-                <div class="row g-5">
-                    <div class="text-center   col-lg-4 col-md-6 col-sm-12">
-                        <div class="card">
-                            <img src="../assets/img/doctor.jpg" class="card-img-top" alt="...">
-                            <div class="card-body">
-                                <h5 class="card-title">Doctor Name</h5>
-                                <p class="card-text">Address</p>
-                            </div>
-                            <ul class="list-group list-group-flush">
-                                <li class="list-group-item">Specialization</li>
-
-                            </ul>
-                            <div class="card-body">
-                                <a href="#" class="card-link">Send a Message</a>
-                                <a href="#" class="card-link">See Reviews</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="text-center  col-lg-4 col-md-6 col-sm-12 ">
-                        <div class="card">
-                            <img src="../assets/img/doctor.jpg" class="card-img-top" alt="...">
-                            <div class="card-body">
-                                <h5 class="card-title">Doctor Name</h5>
-                                <p class="card-text">Address</p>
-                            </div>
-                            <ul class="list-group list-group-flush">
-                                <li class="list-group-item">Specialization</li>
-
-                            </ul>
-                            <div class="card-body">
-                                <a href="#" class="card-link">Send a Message</a>
-                                <a href="#" class="card-link">See Reviews</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="text-center  col-lg-4 col-md-6 col-sm-12">
-                        <div class="card">
-                            <img src="../assets/img/doctor.jpg" class="card-img-top" alt="...">
-                            <div class="card-body">
-                                <h5 class="card-title">Doctor Name</h5>
-                                <p class="card-text">Address</p>
-                            </div>
-                            <ul class="list-group list-group-flush">
-                                <li class="list-group-item">Specialization</li>
-
-                            </ul>
-                            <div class="card-body">
-                                <a href="#" class="card-link">Send a Message</a>
-                                <a href="#" class="card-link">See Reviews</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="text-center  col-lg-4 col-md-6 col-sm-12">
-                        <div class="card">
-                            <img src="../assets/img/doctor.jpg" class="card-img-top" alt="...">
-                            <div class="card-body">
-                                <h5 class="card-title">Doctor Name</h5>
-                                <p class="card-text">Address</p>
-                            </div>
-                            <ul class="list-group list-group-flush">
-                                <li class="list-group-item">Specialization</li>
-
-                            </ul>
-                            <div class="card-body">
-                                <a href="#" class="card-link">Send a Message</a>
-                                <a href="#" class="card-link">See Reviews</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="text-center  col-lg-4 col-md-6 col-sm-12">
-                        <div class="card">
-                            <img src="../assets/img/doctor.jpg" class="card-img-top" alt="...">
-                            <div class="card-body">
-                                <h5 class="card-title">Doctor Name</h5>
-                                <p class="card-text">Address</p>
-                            </div>
-                            <ul class="list-group list-group-flush">
-                                <li class="list-group-item">Specialization</li>
-
-                            </ul>
-                            <div class="card-body">
-                                <a href="#" class="card-link">Send a Message</a>
-                                <a href="#" class="card-link">See Reviews</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="text-center  col-lg-4 col-md-6 col-sm-12">
-                        <div class="card">
-                            <img src="../assets/img/doctor.jpg" class="card-img-top" alt="...">
-                            <div class="card-body">
-                                <h5 class="card-title">Doctor Name</h5>
-                                <p class="card-text">Address</p>
-                            </div>
-                            <ul class="list-group list-group-flush">
-                                <li class="list-group-item">Specialization</li>
-
-                            </ul>
-                            <div class="card-body">
-                                <a href="#" class="card-link">Send a Message</a>
-                                <a href="#" class="card-link">See Reviews</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                <AppCard />
             </div>
         </div>
     </div>
@@ -229,7 +134,7 @@ body {
 .card {
     &:hover {
         cursor: pointer;
-        transform: scale(.9);
+        transform: scale(1.05);
         transition: 2s;
     }
 }
