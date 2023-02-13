@@ -111,7 +111,7 @@ export default {
                             <li>You have our staff always available to help you</li>
                         </ul>
                         <!-- register button -->
-                        <a href="" class="btn btn-light text-primary mt-3">Register</a>
+                        <a href="http://localhost:8000" class="btn btn-light text-primary mt-3">Register</a>
                     </div>
 
                     <!-- img -->
