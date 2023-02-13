@@ -40,6 +40,14 @@ export default {
         },
     },
     computed: {
+
+        // PROVA RICERCA
+        filteredList() {
+            return this.docData.filter(item => {
+                return item.name.toLowerCase().includes(this.searchDoc.toLowerCase());
+            });
+        }
+        //PROVA RICERCA
     },
     created() {
         this.getDoctors()
@@ -69,6 +77,13 @@ export default {
                     <button href="" class="btn btn-light" type="submit">Search</button>
                 </form>
             </div>
+            <!-- PROVA RICERCA -->
+            <ul class="list-group">
+                <li v-for="item in filteredList" :key="item.id" class="list-group-item">
+                    {{ item.name }}
+                </li>
+            </ul>
+            <!-- /PROVA RICERCA -->
             <!-- /SEARCH -->
 
         </div>
