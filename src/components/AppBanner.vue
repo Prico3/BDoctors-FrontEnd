@@ -7,7 +7,10 @@ export default {
 
     data() {
         return {
-            docData: "",
+            docData: [],
+            docSpecs: [],
+            searchDoc: ""
+
         }
     },
     components: {
@@ -20,11 +23,28 @@ export default {
                 .then(resp => {
                     this.docData = resp.data.doctors; console.log(this.docData);
                 });
-        }
+        },
+        filteredDoc() {
+            return this.docData.filter(item => {
+                console.log('ciao');
+                return item.name.toLowerCase().includes(this.searchDoc.toLowerCase())
+            })
+        },
+        getSpecs() {
+            axios
+                .get('http://localhost:8000/api/spec')
+                .then(resp => {
+                    console.log(resp)
+                    this.docSpecs = resp.data.specs[0];
+                });
+        },
+    },
+    computed: {
     },
     created() {
         this.getDoctors()
-    }
+        this.getSpecs()
+    },
 }
 </script>
 
@@ -42,9 +62,11 @@ export default {
 
             <!-- SEARCH -->
             <div class="ms_container d-flex justify-content-center mt-4 ">
-                <form class="d-flex justify-content-center w-50 p-2" role="search">
-                    <input class="form-control me-2" type="search" placeholder="Find your Doctor" aria-label="Search">
-                    <button class="btn btn-light" type="submit">Search</button>
+                <form @submit.prevent="filteredDoc()" action="" class="d-flex justify-content-center w-50 p-2"
+                    role="search">
+                    <input class="form-control me-2" type="search" v-model="searchDoc" placeholder="Find your Doctor"
+                        aria-label="Search">
+                    <button href="" class="btn btn-light" type="submit">Search</button>
                 </form>
             </div>
             <!-- /SEARCH -->
@@ -60,24 +82,20 @@ export default {
                     <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="#">All</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-light" href="#">Cardiologist</a>
+                    <li v-for="(spec, index) in docSpecs" :key="index" class="nav-item">
+                        <a class="nav-link text-light" href="#">{{ spec.name }}</a>
                     </li>
-                    <li class="nav-item ">
-                        <a class="nav-link  text-light" href="#">Oncologist</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link  text-light" href="#">Dermatologist</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link  text-light" href="#">Gynecologist</a>
-                    </li>
+
                 </ul>
                 <!-- /SPECIALIZATIONS -->
 
-                <div v-for="(doc, index) in docData" :key="index">
+                <div class="row">
 
-                    <AppCard :doctor="doc" />
+                    <div class="col-lg-4 col-md-6 col-sm-12" v-for="(doc, index) in docData" :key="index">
+
+                        <AppCard :doctor="doc" />
+
+                    </div>
                 </div>
 
             </div>

@@ -10,11 +10,11 @@ export default {
 </script>
 
 <template>
-    <div class="row g-5">
-        <div class="text-center col-lg-4 col-md-6 col-sm-12">
+    <div class="row ">
+        <div class="text-center">
             <!-- CARD -->
 
-            <div class="card" v-if="doctor.profile_id !== null">
+            <div class="card">
                 <!-- star - reviews  -->
                 <a class="special ms_btn px-2" href="">
                     <i class="fa-solid fa-star"></i>
@@ -33,7 +33,7 @@ export default {
 
                 <ul class="list-group list-group-flush">
                     <!-- specialization -->
-                    <li class="list-group-item">{{ doctor.specialization }}</li>
+                    <li class="list-group-item">{{ doctor.specialization[0] }}</li>
 
                 </ul>
 
