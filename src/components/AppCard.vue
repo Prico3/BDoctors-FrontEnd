@@ -1,10 +1,13 @@
 <script>
 
+
+
 export default {
     name: "AppCard",
     props: {
         doctor: Object
-    }
+    },
+
 }
 
 </script>
@@ -43,7 +46,7 @@ export default {
                     <!-- send reviews -->
                     <a href="#" class="card-link">Send Reviews</a>
                     <!-- see more details -->
-                    <a href="http://localhost:5173/doc" class="card-link">ciao</a>
+                    <router-link to="doc" class="card-link docPage">ciao</router-link>
                 </div>
             </div>
             <!-- /CARD -->
