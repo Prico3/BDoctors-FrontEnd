@@ -22,7 +22,7 @@ export default {
 
     },
     mounted() {
-        $('.dropdown-toggle').dropdown();
+        // $('.dropdown-toggle').dropdown();
     }
 }
 </script>

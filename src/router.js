@@ -1,15 +1,21 @@
 import { createRouter, createWebHistory } from "vue-router";
-import AppDocPage from './components/AppDocPage.vue';
+import AppHome from './pages/AppHome.vue'
+import AppDocPage from './pages/AppDocPage.vue';
 // import AppAbout from './pages/AppAbout.vue';
 // import AppService from './pages/AppService.vue';
-// import NotFound from './pages/NotFound.vue';
+import AppNotFound from './pages/AppNotFound.vue';
 
 const router = createRouter({
     history: createWebHistory(),
     routes: [
+        {
+            path: "/",
+            name: "Home",
+            component: AppHome,
+        },
 
         {
-            path: "/doctor",
+            path: "/doc",
             name: "docPage",
             component: AppDocPage,
         },
@@ -24,12 +30,12 @@ const router = createRouter({
         //         component: AppService,
         //     },
 
-        //     // da mettere alla fine 
-        //     {
-        //         path: "/:pathMatch(.)",
-        //         name: "not-found",
-        //         component: NotFound,
-        //     }
+        // da mettere alla fine 
+        {
+            path: "/:pathMatch(.*)*",
+            name: "not-found",
+            component: AppNotFound,
+        }
     ]
 });
 
