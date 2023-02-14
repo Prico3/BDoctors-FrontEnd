@@ -29,7 +29,7 @@ export default {
                 <div class="row">
                     <!-- send a message -->
                     <div class="text-center p-4 col-lg-4 col-sm-12 hvr">
-                        <img class="mb-3" src="../assets/img/consultazione-sito.svg" alt="">
+                        <img class="mb-3" src="../assets/img/send a message.png" alt="">
                         <h5>Send a message</h5>
                         <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fugiat odio officiis id voluptatum
                             magnam, tempora facere esse nam inventore? Vitae voluptatibus qui officiis voluptates
@@ -37,7 +37,7 @@ export default {
                     </div>
                     <!-- book the visit -->
                     <div class="text-center p-4 col-lg-4 col-sm-12 hvr">
-                        <img class="mb-3" src="../assets/img/consultazione-sito.svg" alt="">
+                        <img class="mb-3" src="../assets/img/book a visit.png" alt="">
                         <h5>Book the visit</h5>
                         <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nam, totam repudiandae? Esse
                             nostrum,
@@ -47,7 +47,7 @@ export default {
                     </div>
                     <!-- leave a review -->
                     <div class="text-center p-4 col-lg-4 col-sm-12 hvr">
-                        <img class="mb-3" src="../assets/img/consultazione-sito.svg" alt="">
+                        <img class="mb-3" src="../assets/img/send a review.png" alt="">
                         <h5>Leave a review</h5>
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore sit doloribus eius dolore
                             magni

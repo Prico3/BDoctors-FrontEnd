@@ -34,7 +34,7 @@ export default {
 
             <!-- LOGO -->
             <div class="container-fluid">
-                <div>
+                <div class="d-flex align-items-center">
 
                     <img src="../assets/img/logo-removebg-preview.png" alt="">
                     <a class="navbar-brand text-light fs-1 hvr" href="#">BDoctors</a>
@@ -95,6 +95,7 @@ export default {
 }
 
 img {
-    width: 30px;
+    max-width: 50px;
+    max-height: 50px;
 }
 </style>
