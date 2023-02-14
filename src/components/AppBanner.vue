@@ -41,18 +41,33 @@ export default {
                 });
         },
         nameSearch() {
-            this.docData.forEach(item => {
-                if (item.name.toLowerCase().includes(this.searchDoc.toLowerCase())) {
-                    console.log(item.name.toLowerCase().includes(this.searchDoc.toLowerCase()));
-                    if (!this.newDocArray.includes(item)) {
-                        this.newDocArray.push(item)
+            if (!this.searchDoc == "") {
+                this.newDocArray = []
+                this.docData.forEach(item => {
+                    let nameArray = item.name.toLowerCase().split('');
+                    let searchArray = this.searchDoc.toLowerCase().split('');
+                    let surnameArray = item.surname.toLowerCase().split('');
+                    let isNameMatched = true;
+                    let isSurnameMatched = true;
+                    for (let i = 0; i < searchArray.length; i++) {
+                        if (nameArray[i] !== searchArray[i]) {
+                            isNameMatched = false;
+                            break;
+                        }
                     }
-                } else if (item.surname.toLowerCase().includes(this.searchDoc.toLowerCase())) {
-                    if (!this.newDocArray.includes(item)) {
-                        this.newDocArray.push(item)
+                    for (let i = 0; i < searchArray.length; i++) {
+                        if (surnameArray[i] !== searchArray[i]) {
+                            isSurnameMatched = false;
+                            break;
+                        }
                     }
-                }
-            });
+                    if (isNameMatched || isSurnameMatched) {
+                        if (!this.newDocArray.includes(item)) {
+                            this.newDocArray.push(item);
+                        }
+                    }
+                });
+            }
         }
     },
 
