@@ -42,9 +42,8 @@ export default {
                     <a href="#" class="card-link">Send a Message</a>
                     <!-- send reviews -->
                     <a href="#" class="card-link">Send Reviews</a>
-
+                    <!-- see more details -->
                     <a href="http://localhost:5173/doc" class="card-link">ciao</a>
-
                 </div>
             </div>
             <!-- /CARD -->

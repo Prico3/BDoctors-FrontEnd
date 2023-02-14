@@ -34,7 +34,11 @@ export default {
 
             <!-- LOGO -->
             <div class="container-fluid">
-                <a class="navbar-brand text-light fs-1 hvr" href="#">BDoctors</a>
+                <div>
+
+                    <img src="../assets/img/logo-removebg-preview.png" alt="">
+                    <a class="navbar-brand text-light fs-1 hvr" href="#">BDoctors</a>
+                </div>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                     aria-expanded="false" aria-label="Toggle navigation">
@@ -88,5 +92,9 @@ export default {
         transform: scale(1.1);
         transition: 2s;
     }
+}
+
+img {
+    width: 30px;
 }
 </style>
