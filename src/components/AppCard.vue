@@ -1,4 +1,5 @@
 <script>
+import { store } from "../store";
 
 
 
@@ -7,6 +8,23 @@ export default {
     props: {
         doctor: Object
     },
+    data() {
+        return {
+            store
+        }
+    },
+    methods: {
+        functionDoc() {
+            console.log(this.doctor);
+        },
+        showDoc(detailsDoc) {
+            this.store.doctorId = detailsDoc
+        },
+    },
+    created() {
+        this.functionDoc()
+
+    }
 
 }
 
@@ -36,7 +54,7 @@ export default {
 
                 <ul class="list-group list-group-flush">
                     <!-- specialization -->
-                    <li class="list-group-item">{{ doctor.specialization[0] }}</li>
+                    <li class="list-group-item">{{ doctor.specialization }}</li>
 
                 </ul>
 
@@ -46,7 +64,7 @@ export default {
                     <!-- send reviews -->
                     <a href="#" class="card-link">Send Reviews</a>
                     <!-- see more details -->
-                    <router-link to="doc" class="card-link docPage">ciao</router-link>
+                    <router-link to="doc" @click="showDoc({{ doctor.id }})" class="card-link docPage">ciao</router-link>
                 </div>
             </div>
             <!-- /CARD -->

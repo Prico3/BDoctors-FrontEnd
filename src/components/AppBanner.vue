@@ -1,6 +1,6 @@
 <script>
 import axios from 'axios';
-
+import { store } from "../store";
 import AppCard from './AppCard.vue';
 export default {
     name: "AppBanner",
@@ -10,7 +10,8 @@ export default {
             docData: [],
             docSpecs: [],
             newDocArray: [],
-            searchDoc: ""
+            searchDoc: "",
+            store
 
 
         }
@@ -19,13 +20,13 @@ export default {
         AppCard
     },
     methods: {
-        getDoctors() {
-            axios
-                .get('http://localhost:8000/api/doc')
-                .then(resp => {
-                    this.docData = resp.data.doctors; console.log(this.docData);
-                });
-        },
+        // getDoctors() {
+        //     axios
+        //         .get('http://localhost:8000/api/doc')
+        //         .then(resp => {
+        //             this.docData = resp.data.doctors; console.log(this.docData);
+        //         });
+        // },
         filteredDoc() {
             return this.docData.filter(item => {
                 console.log('ciao');
@@ -39,6 +40,16 @@ export default {
                     console.log(resp)
                     this.docSpecs = resp.data.specs[0];
                 });
+        },
+        specializationApi(spec) {
+            axios
+                .get(`http://localhost:8000/api/doc/spec/${spec}`)
+                .then(resp => {
+                    this.docData = [];
+                    this.docData = resp.data[0];
+                    console.log(this.docData);
+
+                })
         },
         nameSearch() {
             if (!this.searchDoc == "") {
@@ -72,7 +83,7 @@ export default {
     },
 
     created() {
-        this.getDoctors()
+        // this.getDoctors()
         this.getSpecs()
     },
 }
@@ -113,7 +124,9 @@ export default {
                         <a class="nav-link active" aria-current="page" href="#">All</a>
                     </li>
                     <li v-for="(spec, index) in docSpecs" :key="index" class="nav-item">
-                        <a class="nav-link text-light" href="#">{{ spec.name }}</a>
+                        <a class="nav-link text-light" href="#" @click="specializationApi(spec.id)">{{
+                            spec.name
+                        }}</a>
                     </li>
 
                 </ul>
@@ -121,7 +134,7 @@ export default {
 
                 <div class="row">
 
-                    <div class="col-lg-4 col-md-6 col-sm-12" v-for="(doc, index) in newDocArray" :key="index">
+                    <div class="col-lg-4 col-md-6 col-sm-12" v-for="(doc, index) in docData" :key="index">
 
                         <AppCard :doctor="doc" />
 
