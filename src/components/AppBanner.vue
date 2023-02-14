@@ -9,7 +9,9 @@ export default {
         return {
             docData: [],
             docSpecs: [],
+            newDocArray: [],
             searchDoc: ""
+
 
         }
     },
@@ -38,17 +40,22 @@ export default {
                     this.docSpecs = resp.data.specs[0];
                 });
         },
-    },
-    computed: {
-
-        // PROVA RICERCA
-        filteredList() {
-            return this.docData.filter(item => {
-                return item.name.toLowerCase().includes(this.searchDoc.toLowerCase());
+        nameSearch() {
+            this.docData.forEach(item => {
+                if (item.name.toLowerCase().includes(this.searchDoc.toLowerCase())) {
+                    console.log(item.name.toLowerCase().includes(this.searchDoc.toLowerCase()));
+                    if (!this.newDocArray.includes(item)) {
+                        this.newDocArray.push(item)
+                    }
+                } else if (item.surname.toLowerCase().includes(this.searchDoc.toLowerCase())) {
+                    if (!this.newDocArray.includes(item)) {
+                        this.newDocArray.push(item)
+                    }
+                }
             });
         }
-        //PROVA RICERCA
     },
+
     created() {
         this.getDoctors()
         this.getSpecs()
@@ -74,16 +81,9 @@ export default {
                     role="search">
                     <input class="form-control me-2" type="search" v-model="searchDoc" placeholder="Find your Doctor"
                         aria-label="Search">
-                    <button href="" class="btn btn-light" type="submit">Search</button>
+                    <button href="" class="btn btn-light" type="submit" @click="nameSearch()">Search</button>
                 </form>
             </div>
-            <!-- PROVA RICERCA -->
-            <ul class="list-group">
-                <li v-for="item in filteredList" :key="item.id" class="list-group-item">
-                    {{ item.name }}
-                </li>
-            </ul>
-            <!-- /PROVA RICERCA -->
             <!-- /SEARCH -->
 
         </div>
@@ -106,7 +106,7 @@ export default {
 
                 <div class="row">
 
-                    <div class="col-lg-4 col-md-6 col-sm-12" v-for="(doc, index) in docData" :key="index">
+                    <div class="col-lg-4 col-md-6 col-sm-12" v-for="(doc, index) in newDocArray" :key="index">
 
                         <AppCard :doctor="doc" />
 
