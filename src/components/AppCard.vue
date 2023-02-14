@@ -10,15 +10,16 @@ export default {
     },
     data() {
         return {
-            store
+            store,
+            detailsDoc: this.doctor.id
         }
     },
     methods: {
         functionDoc() {
             console.log(this.doctor);
         },
-        showDoc(detailsDoc) {
-            this.store.doctorId = detailsDoc
+        showDoc() {
+            this.store.doctorId = this.detailsDoc
         },
     },
     created() {
@@ -64,7 +65,7 @@ export default {
                     <!-- send reviews -->
                     <a href="#" class="card-link">Send Reviews</a>
                     <!-- see more details -->
-                    <router-link to="doc" @click="showDoc({{ doctor.id }})" class="card-link docPage">ciao</router-link>
+                    <router-link to="doc" @click="showDoc" class="card-link docPage">ciao</router-link>
                 </div>
             </div>
             <!-- /CARD -->
