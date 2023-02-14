@@ -126,6 +126,7 @@ export default {
                         <AppCard :doctor="doc" />
 
                     </div>
+
                 </div>
 
             </div>
