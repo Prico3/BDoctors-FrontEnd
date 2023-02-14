@@ -1,4 +1,5 @@
 <script>
+
 export default {
     name: 'AppHeader',
     data() {
@@ -18,6 +19,10 @@ export default {
             //     }
             // ]
         }
+
+    },
+    mounted() {
+        $('.dropdown-toggle').dropdown();
     }
 }
 </script>
