@@ -71,8 +71,20 @@ export default {
                     <h2>Nome e Cognome</h2>
                     <h4>Specializzazione</h4>
                     <h4>Media voto e numero recensioni</h4>
+
                 </div>
+
             </div>
+
+        </div>
+        <div class="container bg-w rounded-2 w-50 mt-5 text-center text-primary p-4">
+            <h4>Il mio CV</h4>
+            <h4>dati</h4>
+            <h4>dati</h4>
+            <h4>dati</h4>
+        </div>
+
+        <div class="container-fluid bg-w mt-5 d-flex justify-content-between">
 
         </div>
 
@@ -89,5 +101,10 @@ export default {
 
 .ms_container {
     margin: 0 auto;
+}
+
+.bg-w {
+    background-color: white;
+
 }
 </style>

@@ -47,7 +47,7 @@ export default {
                 .get(`http://localhost:8000/api/doc/spec/${spec}`)
                 .then(resp => {
                     this.docData = [];
-                    this.docData = resp.data[1];
+                    this.docData = resp.data;
                     console.log(resp.data);
 
                 })
