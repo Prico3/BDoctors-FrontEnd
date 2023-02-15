@@ -119,6 +119,7 @@ export default {
         getInputMediaVote() {
             if (this.mediaVote) {
                 this.mediaVote = !this.mediaVote
+                this.specializationApi()
             } else {
                 this.mediaVote = !this.mediaVote
                 this.specializationApi()
@@ -128,6 +129,7 @@ export default {
         getInputReview() {
             if (this.review) {
                 this.review = !this.review
+                this.specializationApi()
             } else {
                 this.review = !this.review
                 this.specializationApi()
