@@ -16,7 +16,7 @@ export default {
             if (this.store.doctorSlug !== "") {
                 axios.get(`http://localhost:8000/api/doc/${this.store.doctorSlug}`).then(resp => {
                     this.docData = resp.data.doctor
-                    console.log(this.docData, "ciao");
+                    console.log(this.docData[2], "ciao");
                 })
 
             } else {
@@ -64,18 +64,28 @@ export default {
     <a @click="docPageApi">ciao</a>
     <a @click="slugCheck">ref</a> -->
     <div class="container-fluid bg py-5">
-        <div class="container d-flex">
-            <div class="ms_container d-flex">
-                <img class="img-thumbnail border border-3" src="../assets/img/doctor.jpg" alt="">
-                <div class="flex-column ms-4 text-light">
-                    <h2>Nome e Cognome</h2>
-                    <h4>Specializzazione</h4>
-                    <h4>Media voto e numero recensioni</h4>
-
+        <div class="container text-light">
+            <div class="row">
+                <div class="col">
+                    <img class="img-thumbnail border border-3" src="../assets/img/doctor.jpg" alt="">
                 </div>
 
+                <div class="col">
+                    <h2>{{ docData[0].name }} {{ docData[0].surname }}</h2>
+                    <h4> specialization</h4>
+                    <ul>
+                        <li v-for="(spec, index) in docData[2]" :key="index">
+                            {{ spec }}
+                        </li>
+                    </ul>
+                    <h4>Review</h4>
+                    <ul>
+                        <li v-for="(review, index) in docData[review]" :key="index">
+                            {{ review.text }}
+                        </li>
+                    </ul>
+                </div>
             </div>
-
         </div>
         <div class="container bg-w rounded-2 w-50 mt-5 text-center text-primary p-4">
             <h4>Il mio CV</h4>

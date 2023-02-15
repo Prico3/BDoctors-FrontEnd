@@ -44,7 +44,7 @@ export default {
                 </a>
 
                 <!-- profile photo -->
-                <img src="../assets/img/doctor.jpg" class="card-img-top" alt="...">
+                <img v-if="doctor.photo" :src="doctor.photo" alt="">
 
                 <div class="card-body">
                     <!-- doctor name -->
