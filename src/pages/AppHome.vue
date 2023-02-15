@@ -1,9 +1,7 @@
 <script>
 
-import AppHeader from '../components/AppHeader.vue';
 import AppBanner from '../components/AppBanner.vue';
 import AppMain from '../components/AppMain.vue';
-import AppFooter from '../components/AppFooter.vue';
 export default {
     name: 'AppHome',
     data() {
@@ -12,10 +10,8 @@ export default {
         }
     },
     components: {
-        AppHeader,
         AppBanner,
         AppMain,
-        AppFooter
     },
     methods: {
 
@@ -24,10 +20,10 @@ export default {
 </script>
 
 <template>
-    <AppHeader />
+
     <AppBanner />
     <AppMain />
-    <AppFooter />
+
 
 </template>
 
