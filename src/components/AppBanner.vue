@@ -11,7 +11,8 @@ export default {
             docSpecs: [],
             newDocArray: [],
             searchDoc: "",
-            store
+            store,
+            specId: ""
 
 
         }
@@ -42,9 +43,15 @@ export default {
                     console.log(this.docSpecs = resp.data.specs[0]);
                 });
         },
-        specializationApi(spec) {
+        saveSpec(spec) {
+            this.specId = "";
+            this.specId = spec;
+            this.specializationApi();
+
+        },
+        specializationApi() {
             axios
-                .get(`http://localhost:8000/api/doc/spec/${spec}`)
+                .get(`http://localhost:8000/api/doc/spec/${this.specId}`)
                 .then(resp => {
                     this.docData = [];
                     this.docData = resp.data;
@@ -125,7 +132,7 @@ export default {
                         <a class="nav-link active" aria-current="page" href="#">All</a>
                     </li>
                     <li v-for="(spec, index) in docSpecs" :key="index" class="nav-item">
-                        <a class="nav-link text-light" href="#" @click="specializationApi(spec.id)">{{
+                        <a class="nav-link text-light" href="#" @click="saveSpec(spec.id)">{{
                             spec.name
                         }}</a>
                     </li>
@@ -133,16 +140,19 @@ export default {
                 <!-- /SPECIALIZATIONS -->
 
                 <!-- CHECKBOX -->
-                <div class="form-check form-switch">
-                    <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault">
-                    <label class="form-check-label" for="flexSwitchCheckDefault">Media Vote
-                    </label>
-                </div>
-                <div class="form-check form-switch">
-                    <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckChecked" checked>
-                    <label class="form-check-label" for="flexSwitchCheckChecked">Reviews Number
-                    </label>
-                </div>
+                <form @click="specializationApi" action="specializationApi">
+                    <div class="form-check form-switch">
+                        <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault">
+                        <label class="form-check-label" for="flexSwitchCheckDefault">Media Vote
+                        </label>
+                    </div>
+                    <div class="form-check form-switch">
+                        <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckChecked"
+                            checked>
+                        <label class="form-check-label" for="flexSwitchCheckChecked">Reviews Number
+                        </label>
+                    </div>
+                </form>
                 <!-- /CHECKBOX -->
 
 
