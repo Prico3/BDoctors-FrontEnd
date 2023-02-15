@@ -40,7 +40,7 @@ export default {
                 <!-- star - reviews  -->
                 <a class="special ms_btn px-2" href="">
                     <i class="fa-solid fa-star"></i>
-                    5.0
+                    {{ doctor.mediaVote }}
                 </a>
 
                 <!-- profile photo -->
