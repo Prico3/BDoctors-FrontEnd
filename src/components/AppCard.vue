@@ -61,11 +61,11 @@ export default {
 
                 <div class="card-body">
                     <!-- send message -->
-                    <a href="#" class="card-link">Send a Message</a>
+                    <!-- <a href="#" class="card-link">Send a Message</a> -->
                     <!-- send reviews -->
-                    <a href="#" class="card-link">Send Reviews</a>
+                    <!-- <a href="#" class="card-link">Send Reviews</a> -->
                     <!-- see more details -->
-                    <router-link to="doc" @click="showDoc" class="card-link docPage">ciao</router-link>
+                    <router-link to="doc" @click="showDoc" class="card-link docPage">See details</router-link>
                 </div>
             </div>
             <!-- /CARD -->
