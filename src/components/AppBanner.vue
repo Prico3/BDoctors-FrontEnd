@@ -39,6 +39,7 @@ export default {
                 .then(resp => {
                     console.log(resp)
                     this.docSpecs = resp.data.specs[0];
+                    console.log(this.docSpecs = resp.data.specs[0]);
                 });
         },
         specializationApi(spec) {

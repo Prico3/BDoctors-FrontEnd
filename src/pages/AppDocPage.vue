@@ -60,13 +60,32 @@ export default {
 
 <template>
     <!-- <h1>{{ docData.name }} </h1> -->
-    <h2>hello {{ docData[0].name }}</h2>
+    <!-- <h2>hello {{ docData[0].name }}</h2>
     <a @click="docPageApi">ciao</a>
-    <a @click="slugCheck">ref</a>
+    <a @click="slugCheck">ref</a> -->
+    <div class="container-fluid bg">
+        <div class="container d-flex">
+            <img src="../assets/img/doctor.jpg" alt="">
+            <h2>Nome e Cognome</h2>
+            <div class="container">
+                <div>
+                    <h4>Specializzazione</h4>
+                    <h4>Media voto e numero recensioni</h4>
+                </div>
+            </div>
+
+
+
+        </div>
+
+    </div>
 
 
 </template>
 
-<style>
-
+<style lang="scss" scoped>
+.bg {
+    background: rgb(2, 0, 36);
+    background: linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(25, 70, 172, 1) 0%, rgba(0, 215, 255, 1) 100%);
+}
 </style>
