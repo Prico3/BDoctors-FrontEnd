@@ -11,7 +11,7 @@ export default {
     data() {
         return {
             store,
-            detailsDoc: this.doctor.id
+            detailsDoc: this.doctor.slug
         }
     },
     methods: {
@@ -19,7 +19,7 @@ export default {
             console.log(this.doctor);
         },
         showDoc() {
-            this.store.doctorId = this.detailsDoc
+            this.store.doctorSlug = this.detailsDoc
         },
     },
     created() {

@@ -1,4 +1,5 @@
 <script>
+import axios from 'axios';
 import { store } from "../store";
 export default {
     name: "AppDocPage",
@@ -6,22 +7,36 @@ export default {
         return {
             store,
             docData: [],
+            docSlug: ""
         }
     },
-    docPageApi() {
-        axios.get(`http://localhost:8000/api/doc/spec/${this.store.doctorId}`).then(resp => {
-            this.docData = resp.data[0];
-            console.log(this.docData);
-        })
+    methods: {
+        docPageApi() {
+            axios.get(`http://localhost:8000/api/doc/${this.store.doctorSlug}`).then(resp => {
+                this.docData = resp.data.doctor
+                console.log(this.docData, "ciao");
+            })
+
+        },
+        slugCheck() {
+            this.docData = this.store.docData
+            console.log(this.docData)
+        }
     },
     created() {
-        this.docPageApi
+        this.docPageApi()
+        this.slugCheck()
     }
 }
 </script>
 
 <template>
-    <h1>{{ docData.name }} </h1>
+    <!-- <h1>{{ docData.name }} </h1> -->
+    <h2>hello {{ docData[0].name }}</h2>
+    <a @click="docPageApi">ciao</a>
+    <a @click="slugCheck">ref</a>
+
+
 </template>
 
 <style>
