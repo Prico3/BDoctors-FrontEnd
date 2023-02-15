@@ -42,13 +42,14 @@ export default {
                     <i class="fa-solid fa-star"></i>
                     {{ doctor.mediaVote }}
                 </a>
+                <!-- <span>{{ doctor.numReviews }}</span> -->
 
                 <!-- profile photo -->
                 <img v-if="doctor.photo" :src="doctor.photo" alt="">
 
                 <div class="card-body">
                     <!-- doctor name -->
-                    <h5 class="card-title">{{ doctor.name }}</h5>
+                    <h5 class="card-title">{{ doctor.name }} {{ doctor.surname }}</h5>
                     <!-- doctor address -->
                     <p class="card-text">{{ doctor.studio_address }}</p>
                 </div>

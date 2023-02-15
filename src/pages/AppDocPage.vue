@@ -72,18 +72,19 @@ export default {
 
                 <div class="col">
                     <h2>{{ docData[0].name }} {{ docData[0].surname }}</h2>
-                    <h4> specialization</h4>
+                    <h4> Specialization:</h4>
                     <ul>
                         <li v-for="(spec, index) in docData[2]" :key="index">
                             {{ spec }}
                         </li>
                     </ul>
-                    <h4>Review</h4>
-                    <ul>
-                        <li v-for="(review, index) in docData[review]" :key="index">
-                            {{ review.text }}
+                    <h4>Studio address: {{ docData[0].address }}</h4>
+                    <!-- <h4>Review</h4> -->
+                    <!-- <ul>
+                        <li v-for="(review, id) in docData.review" :key="id">
+                            <p>{{ review.text }}</p>
                         </li>
-                    </ul>
+                    </ul> -->
                 </div>
             </div>
         </div>

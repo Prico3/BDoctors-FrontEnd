@@ -129,9 +129,23 @@ export default {
                             spec.name
                         }}</a>
                     </li>
-
                 </ul>
                 <!-- /SPECIALIZATIONS -->
+
+                <!-- CHECKBOX -->
+                <div class="form-check form-switch">
+                    <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault">
+                    <label class="form-check-label" for="flexSwitchCheckDefault">Media Vote
+                    </label>
+                </div>
+                <div class="form-check form-switch">
+                    <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckChecked" checked>
+                    <label class="form-check-label" for="flexSwitchCheckChecked">Reviews Number
+                    </label>
+                </div>
+                <!-- /CHECKBOX -->
+
+
 
                 <div class="row">
 
