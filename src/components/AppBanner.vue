@@ -12,9 +12,9 @@ export default {
             newDocArray: [],
             searchDoc: "",
             store,
-            specId: ""
-
-
+            specId: "",
+            mediaVote: false,
+            review: false,
         }
     },
     components: {
@@ -50,14 +50,42 @@ export default {
 
         },
         specializationApi() {
-            axios
-                .get(`http://localhost:8000/api/doc/spec/${this.specId}`)
-                .then(resp => {
-                    this.docData = [];
-                    this.docData = resp.data;
-                    console.log(resp.data);
-
-                })
+            if (this.mediaVote) {
+                //ORDINATI IN BASE ALLA MEDIA DI RECENSIONE
+                axios
+                    .get(`http://localhost:8000/api/doc/spec/${this.specId}`)
+                    .then(resp => {
+                        this.docData = [];
+                        this.docData = resp.data;
+                        const combinedArray = Object.values(this.docData).reduce((acc, curr) => acc.concat(curr), []);
+                        combinedArray.sort((a, b) => b.mediaVote - a.mediaVote);
+                        this.docData = combinedArray;
+                        console.log(combinedArray, "mememedia");
+                        console.log(this.docData, "ciaoooo");
+                        console.log(resp.data);
+                    })
+            } else if (this.review) {
+                //ORDINATI IN BASE AL NUMERO DI REVIEW
+                axios
+                    .get(`http://localhost:8000/api/doc/spec/${this.specId}`)
+                    .then(resp => {
+                        this.docData = [];
+                        this.docData = resp.data;
+                        const combinedArray = Object.values(this.docData).reduce((acc, curr) => acc.concat(curr), []);
+                        combinedArray.sort((a, b) => b.numReviews - a.numReviews);
+                        this.docData = combinedArray;
+                        console.log(combinedArray, "c-c-combined");
+                        console.log(this.docData, "ciaoooo");
+                    })
+            } else {
+                axios
+                    .get(`http://localhost:8000/api/doc/spec/${this.specId}`)
+                    .then(resp => {
+                        this.docData = [];
+                        this.docData = resp.data;
+                        console.log(resp.data);
+                    })
+            }
         },
         nameSearch() {
             if (!this.searchDoc == "") {
@@ -87,6 +115,24 @@ export default {
                     }
                 });
             }
+        },
+        getInputMediaVote() {
+            if (this.mediaVote) {
+                this.mediaVote = !this.mediaVote
+            } else {
+                this.mediaVote = !this.mediaVote
+                this.specializationApi()
+            }
+            console.log(this.mediaVote);
+        },
+        getInputReview() {
+            if (this.review) {
+                this.review = !this.review
+            } else {
+                this.review = !this.review
+                this.specializationApi()
+            }
+            console.log(this.review);
         }
     },
 
@@ -140,15 +186,16 @@ export default {
                 <!-- /SPECIALIZATIONS -->
 
                 <!-- CHECKBOX -->
-                <form @click="specializationApi" action="specializationApi">
+                <form action="specializationApi">
                     <div class="form-check form-switch">
-                        <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault">
+                        <input @click="getInputMediaVote()" class="form-check-input" type="checkbox" role="switch"
+                            id="flexSwitchCheckDefault">
                         <label class="form-check-label" for="flexSwitchCheckDefault">Media Vote
                         </label>
                     </div>
                     <div class="form-check form-switch">
-                        <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckChecked"
-                            checked>
+                        <input @click="getInputReview()" class="form-check-input" type="checkbox" role="switch"
+                            id="flexSwitchCheckChecked">
                         <label class="form-check-label" for="flexSwitchCheckChecked">Reviews Number
                         </label>
                     </div>
