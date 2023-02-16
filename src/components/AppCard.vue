@@ -16,7 +16,8 @@ export default {
     },
     methods: {
         functionDoc() {
-            console.log(this.doctor);
+            console.log(this.doctor, "doctor");
+
         },
         showDoc() {
             this.store.doctorSlug = this.detailsDoc
@@ -45,7 +46,7 @@ export default {
                 <!-- <span>{{ doctor.numReviews }}</span> -->
 
                 <!-- profile photo -->
-                <img v-if="doctor.photo" src="`http://localhost:8000/public/storage/${doctor[0].photo}`" alt="">
+                <img :src="`http://localhost:8000/public/storage/${doctor.photo}`" alt="">
 
                 <div class="card-body">
                     <!-- doctor name -->

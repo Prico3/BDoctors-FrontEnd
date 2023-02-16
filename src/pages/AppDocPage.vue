@@ -9,19 +9,26 @@ export default {
             docData: [],
             docSlug: "",
             myData: "",
+            docPhoto: "",
         }
     },
     methods: {
         docPageApi() {
+
             if (this.store.doctorSlug !== "") {
                 axios.get(`http://localhost:8000/api/doc/${this.store.doctorSlug}`).then(resp => {
                     this.docData = resp.data.doctor
+                    this.docPhoto = this.docData[1].photo
+                    debugger
+
                 })
 
             } else {
                 axios.get(`http://localhost:8000/api/doc/${this.myData}`).then(resp => {
                     this.docData = resp.data.doctor
                     console.log(this.docData);
+                    this.docPhoto = this.docData[1].photo
+                    debugger
                 })
             }
         },
@@ -45,6 +52,10 @@ export default {
             } else {
             }
         },
+        // getNewUrl(path) {
+
+        //     return new URL(`http://localhost:8000/storage/${path}`, import.meta.url).href;
+        // }
 
 
     },
@@ -66,7 +77,7 @@ export default {
         <div class="container text-light">
             <div class="row">
                 <div class="col">
-                    <img class="img-thumbnail border border-3" src="`http://localhost:8000/storage/${doctor[0].photo}`"
+                    <img class="img-thumbnail border border-3" :src="`http://localhost:8000/storage/${docPhoto}`"
                         alt="">
                 </div>
 
