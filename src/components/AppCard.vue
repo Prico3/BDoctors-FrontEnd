@@ -50,9 +50,11 @@ export default {
                     {{ doctor.numReviews }}
                 </p>
                 <!-- <span>{{ doctor.numReviews }}</span> -->
-
-                <!-- profile photo -->
-                <img :src="`http://localhost:8000/storage/${doctor.photo}`" alt="">
+                <div class="img-wrapper">
+                    <!-- profile photo -->
+                    <img v-if="doctor.photo" :src="`http://localhost:8000/storage/${doctor.photo}`" alt="">
+                    <img v-else src="../assets/img/doctor-1-removebg-preview.png" alt="">
+                </div>
 
                 <div class="card-body">
                     <!-- doctor name -->
@@ -82,7 +84,7 @@ export default {
         </div>
 
 
-</div>
+    </div>
 </template>
 
 <style lang="scss" scoped>
@@ -120,10 +122,14 @@ a {
 
 }
 
-img {
-    position: relative;
-    border-radius: 5px;
+.img-wrapper {
 
+    img {
+        position: relative;
+        border-radius: 5px;
+        max-width: 100%;
+
+    }
 }
 
 .card {
