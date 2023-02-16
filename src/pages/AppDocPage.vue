@@ -10,7 +10,6 @@ export default {
             docSlug: "",
             myData: "",
             docPhoto: "",
-            value: null
         }
     },
     methods: {
@@ -60,11 +59,6 @@ export default {
 
 
     },
-    computed: {
-        getStars() {
-            return this.docData.review.vote;
-        }
-    },
     created() {
         // this.docPageApi()
         this.slugCheck()
@@ -99,8 +93,8 @@ export default {
         <!-- FORMS -->
         <div class="container-fluid">
             <div class="container text-light">
-                <div class="row">
-                    <div class="col">
+                <div class="row justify-content-between">
+                    <div class="col-5 bg-col">
                         <h2>Rate your experience</h2>
                         <div class="form-check">
                             <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1"
@@ -143,21 +137,21 @@ export default {
                         </div>
                         <label for="exampleFormControlTextarea1" class="form-label"></label>
                         <textarea class="form-control" id="exampleFormControlTextarea1" placeholder="Write here a review..."
-                            rows="3"></textarea>
-                        <button type="submit" class="btn btn-success mt-3">Submit</button>
+                            rows="2"></textarea>
+                        <button type="submit" class="btn btn-success mt-2">Submit</button>
                     </div>
-                    <div class="col">
+                    <div class="col-5 bg-col">
                         <h2>Book your visit</h2>
                         <div class="form">
-                            <div class="">
-                                <label for="exampleFormControlInput1" class="form-label"></label>
-                                <input type="email" class="form-control" id="exampleFormControlInput1"
-                                    placeholder="name@example.com">
-                            </div>
-                            <div class="mb-3">
+
+                            <label for="exampleFormControlInput1" class="form-label"></label>
+                            <input type="email" class="form-control" id="exampleFormControlInput1"
+                                placeholder="name@example.com">
+
+                            <div class="mb-2">
                                 <label for="exampleFormControlTextarea1" class="form-label"></label>
                                 <textarea class="form-control" id="exampleFormControlTextarea1"
-                                    placeholder="Write your requests here..." rows="6"></textarea>
+                                    placeholder="Write your requests here..." rows="5"></textarea>
                             </div>
                             <div class="d-flex justify-content-end">
                                 <button type="submit" class="btn btn-success">Submit</button>
@@ -170,28 +164,27 @@ export default {
             </div>
         </div>
 
-        <div class="container text-light">
-            <div>
-                <b-form-rating v-model="value"></b-form-rating>
-                <p class="mt-2">Value: {{ value }}</p>
-            </div>
+        <!-- REVIEWS -->
+        <div class="container text-light mt-5 py-3 bg-col">
             <h4>Reviews from other users</h4>
-            <div class="review-container bg-primary-subtle">
-                <ul>
-                    <li v-for="(review, id) in docData.review" :key="id">
-                        <p>{{ review.vote }}</p>
-                        <i v-for="n in docData.review.vote" :key="n" :class="n <= getStars ? 'fa-solid' : 'fa-regular'"
-                            class="fa-star"></i>
+            <div class="review-container">
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item" v-for="(review, id) in docData.review" :key="id">
+                        <p> <i class="fa-solid fa-star"></i> {{ review.vote }}</p>
                         <p> {{ review.text }}</p>
-                        <hr>
+
                     </li>
+
                 </ul>
             </div>
+
         </div>
+        <!-- /REVIEWS -->
+
 
 
         <div class="container bg-w rounded-2 w-50 mt-5 text-center text-primary p-4">
-            <h4>{{ docData[1].curriculum_vitae }}</h4>
+            <img :src="`http://localhost:8000/storage/${docPhoto}`" alt="">
             <h4>dati</h4>
             <h4>dati</h4>
             <h4>dati</h4>
@@ -229,6 +222,7 @@ i {
 .review-container {
     height: 400px;
     overflow: auto;
+    border-radius: 10px;
 
 }
 
@@ -244,5 +238,11 @@ i {
 ::-webkit-scrollbar-thumb {
     border-radius: 10px;
     -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);
+}
+
+.bg-col {
+    border-radius: 10px;
+    background-color: rgba(5, 12, 36, 0.4);
+
 }
 </style>
