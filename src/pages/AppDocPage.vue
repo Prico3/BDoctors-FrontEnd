@@ -10,6 +10,7 @@ export default {
             docSlug: "",
             myData: "",
             docPhoto: "",
+            value: null
         }
     },
     methods: {
@@ -58,6 +59,11 @@ export default {
         // }
 
 
+    },
+    computed: {
+        getStars() {
+            return this.docData.review.vote;
+        }
     },
     created() {
         // this.docPageApi()
@@ -164,14 +170,25 @@ export default {
             </div>
         </div>
 
+        <div class="container text-light">
+            <div>
+                <b-form-rating v-model="value"></b-form-rating>
+                <p class="mt-2">Value: {{ value }}</p>
+            </div>
+            <h4>Reviews from other users</h4>
+            <div class="review-container bg-primary-subtle">
+                <ul>
+                    <li v-for="(review, id) in docData.review" :key="id">
+                        <p>{{ review.vote }}</p>
+                        <i v-for="n in docData.review.vote" :key="n" :class="n <= getStars ? 'fa-solid' : 'fa-regular'"
+                            class="fa-star"></i>
+                        <p> {{ review.text }}</p>
+                        <hr>
+                    </li>
+                </ul>
+            </div>
+        </div>
 
-        <h4>Review</h4>
-        <ul>
-            <li v-for="(review, id) in docData.review" :key="id">
-
-                <p> <span>{{ review.vote }}</span> {{ review.text }}</p>
-            </li>
-        </ul>
 
         <div class="container bg-w rounded-2 w-50 mt-5 text-center text-primary p-4">
             <h4>{{ docData[1].curriculum_vitae }}</h4>
@@ -207,5 +224,25 @@ export default {
 
 i {
     color: gold;
+}
+
+.review-container {
+    height: 400px;
+    overflow: auto;
+
+}
+
+::-webkit-scrollbar {
+    width: 12px;
+}
+
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);
 }
 </style>
