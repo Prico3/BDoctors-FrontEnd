@@ -11,7 +11,8 @@ export default {
     data() {
         return {
             store,
-            detailsDoc: this.doctor.slug
+            detailsDoc: this.doctor.slug,
+            docPhoto: "",
         }
     },
     methods: {
@@ -45,8 +46,11 @@ export default {
                 </a>
                 <!-- <span>{{ doctor.numReviews }}</span> -->
 
+
                 <!-- profile photo -->
-                <img :src="`http://localhost:8000/public/storage/${doctor.photo}`" alt="">
+                <img :src="`http://localhost:8000/storage/${doctor.photo}`" alt="">
+
+
 
                 <div class="card-body">
                     <!-- doctor name -->
@@ -75,7 +79,7 @@ export default {
         </div>
 
 
-    </div>
+</div>
 </template>
 
 <style lang="scss" scoped>
@@ -99,6 +103,7 @@ a {
 
 img {
     position: relative;
+
 }
 
 .card {
@@ -107,5 +112,9 @@ img {
         transform: scale(1.05);
         transition: 2s;
     }
+
+    // &.div-photo {
+    //     max-width: 200px;
+    // }
 }
 </style>

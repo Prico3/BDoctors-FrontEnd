@@ -146,7 +146,6 @@ export default {
 </script>
 
 <template>
-
     <div class="container-fluid bg">
 
         <div class="container text-light  py-4">
@@ -188,14 +187,14 @@ export default {
                 <!-- /SPECIALIZATIONS -->
 
                 <!-- CHECKBOX -->
-                <form action="specializationApi">
-                    <div class="form-check form-switch">
+                <form class="switch py-4 text-light" action="specializationApi">
+                    <div class="form-check form-switch ms-2">
                         <input @click="getInputMediaVote()" class="form-check-input" type="checkbox" role="switch"
                             id="flexSwitchCheckDefault">
                         <label class="form-check-label" for="flexSwitchCheckDefault">Media Vote
                         </label>
                     </div>
-                    <div class="form-check form-switch">
+                    <div class="form-check form-switch ms-2">
                         <input @click="getInputReview()" class="form-check-input" type="checkbox" role="switch"
                             id="flexSwitchCheckChecked">
                         <label class="form-check-label" for="flexSwitchCheckChecked">Reviews Number
@@ -208,7 +207,7 @@ export default {
 
                 <div class="row">
 
-                    <div class="col-lg-4 col-md-6 col-sm-12" v-for="(doc, index) in docData" :key="index">
+                    <div class="col-lg-4 col-md-6 col-sm-12 mt-4" v-for="(doc, index) in docData" :key="index">
 
                         <AppCard :doctor="doc" />
 
@@ -218,8 +217,7 @@ export default {
 
             </div>
         </div>
-    </div>
-
+</div>
 </template>
 
 <style lang="scss" scoped>
@@ -283,15 +281,6 @@ body {
 
     20% {
         transform: translateY(-20px)
-    }
-}
-
-
-.card {
-    &:hover {
-        cursor: pointer;
-        transform: scale(1.05);
-        transition: 2s;
     }
 }
 </style>

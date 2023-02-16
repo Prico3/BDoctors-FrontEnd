@@ -19,7 +19,7 @@ export default {
                 axios.get(`http://localhost:8000/api/doc/${this.store.doctorSlug}`).then(resp => {
                     this.docData = resp.data.doctor
                     this.docPhoto = this.docData[1].photo
-                    debugger
+
 
                 })
 
@@ -28,7 +28,7 @@ export default {
                     this.docData = resp.data.doctor
                     console.log(this.docData);
                     this.docPhoto = this.docData[1].photo
-                    debugger
+
                 })
             }
         },
@@ -69,16 +69,11 @@ export default {
 </script>
 
 <template>
-    <!-- <h1>{{ docData.name }} </h1> -->
-    <!-- <h2>hello {{ docData[0].name }}</h2>
-    <a @click="docPageApi">ciao</a>
-    <a @click="slugCheck">ref</a> -->
     <div class="container-fluid bg py-5">
         <div class="container text-light">
             <div class="row">
                 <div class="col">
-                    <img class="img-thumbnail border border-3" :src="`http://localhost:8000/storage/${docPhoto}`"
-                        alt="">
+                    <img class="img-thumbnail border border-3" :src="`http://localhost:8000/storage/${docPhoto}`" alt="">
                 </div>
 
                 <div class="col">
@@ -95,12 +90,80 @@ export default {
             <hr>
         </div>
 
-        <div class="container bg-w rounded-2 w-50 mt-5 text-center text-primary p-4">
-            <h4>{{ docData[1].curriculum_vitae }}</h4>
-            <h4>dati</h4>
-            <h4>dati</h4>
-            <h4>dati</h4>
+        <!-- FORMS -->
+        <div class="container-fluid">
+            <div class="container text-light">
+                <div class="row">
+                    <div class="col">
+                        <h2>Rate your experience</h2>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1"
+                                value="option1" checked>
+                            <label class="form-check-label" for="exampleRadios1">
+                                <i class="fa-solid fa-star"></i>
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2"
+                                value="option2">
+                            <label class="form-check-label" for="exampleRadios2">
+                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios3"
+                                value="option3">
+                            <label class="form-check-label" for="exampleRadios3">
+                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                    class="fa-solid fa-star"></i>
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios3"
+                                value="option3">
+                            <label class="form-check-label" for="exampleRadios3">
+                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                    class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios3"
+                                value="option3">
+                            <label class="form-check-label" for="exampleRadios3">
+                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                    class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                    class="fa-solid fa-star"></i>
+                            </label>
+                        </div>
+                        <label for="exampleFormControlTextarea1" class="form-label"></label>
+                        <textarea class="form-control" id="exampleFormControlTextarea1" placeholder="Write here a review..."
+                            rows="3"></textarea>
+                        <button type="submit" class="btn btn-success mt-3">Submit</button>
+                    </div>
+                    <div class="col">
+                        <h2>Book your visit</h2>
+                        <div class="form">
+                            <div class="">
+                                <label for="exampleFormControlInput1" class="form-label"></label>
+                                <input type="email" class="form-control" id="exampleFormControlInput1"
+                                    placeholder="name@example.com">
+                            </div>
+                            <div class="mb-3">
+                                <label for="exampleFormControlTextarea1" class="form-label"></label>
+                                <textarea class="form-control" id="exampleFormControlTextarea1"
+                                    placeholder="Write your requests here..." rows="6"></textarea>
+                            </div>
+                            <div class="d-flex justify-content-end">
+                                <button type="submit" class="btn btn-success">Submit</button>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
         </div>
+
 
         <h4>Review</h4>
         <ul>
@@ -110,12 +173,13 @@ export default {
             </li>
         </ul>
 
-
-
-        <div class="mb-3">
-            <label for="exampleFormControlTextarea1" class="form-label"></label>
-            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+        <div class="container bg-w rounded-2 w-50 mt-5 text-center text-primary p-4">
+            <h4>{{ docData[1].curriculum_vitae }}</h4>
+            <h4>dati</h4>
+            <h4>dati</h4>
+            <h4>dati</h4>
         </div>
+
 
 
 
@@ -123,9 +187,7 @@ export default {
 
         </div>
 
-    </div>
-
-
+</div>
 </template>
 
 <style lang="scss" scoped>
@@ -141,5 +203,9 @@ export default {
 .bg-w {
     background-color: white;
 
+}
+
+i {
+    color: gold;
 }
 </style>
