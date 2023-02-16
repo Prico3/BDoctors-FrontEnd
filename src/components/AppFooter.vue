@@ -21,7 +21,7 @@ export default {
                             <a class="nav-link" href="#">About Us</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Are you a Doctor?</a>
+                            <a class="nav-link" href="http://localhost:8000/register">Are you a Doctor?</a>
                         </li>
                     </ul>
                 </div>
@@ -30,9 +30,7 @@ export default {
         </div>
     </nav>
     <!-- small text -->
-    <p class="text-center py-2">Made with Love by Team 2 Aka The Code Commanders</p>
+<p class="text-center py-2">Made with Love by Team 2 Aka The Code Commanders</p>
 </template>
 
-<style>
-
-</style>
+<style></style>

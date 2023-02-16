@@ -34,23 +34,25 @@ export default {
 </script>
 
 <template>
-    <div class="row ">
+    <div class="row  g-4">
         <div class="text-center">
             <!-- CARD -->
 
             <div class="card">
                 <!-- star - reviews  -->
-                <a class="special ms_btn px-2" href="">
+                <p class="special ms_btn px-2" href="">
                     <i class="fa-solid fa-star"></i>
                     {{ doctor.mediaVote }}
-                </a>
-                <!-- <span>{{ doctor.numReviews }}</span> -->
+                </p>
 
+                <p class="special-2 ms_btn-2 px-2" href="">
+                    <i class="fa-solid fa-comment-dots"></i>
+                    {{ doctor.numReviews }}
+                </p>
+                <!-- <span>{{ doctor.numReviews }}</span> -->
 
                 <!-- profile photo -->
                 <img :src="`http://localhost:8000/storage/${doctor.photo}`" alt="">
-
-
 
                 <div class="card-body">
                     <!-- doctor name -->
@@ -71,7 +73,8 @@ export default {
                     <!-- send reviews -->
                     <!-- <a href="#" class="card-link">Send Reviews</a> -->
                     <!-- see more details -->
-                    <router-link to="doc" @click="showDoc" class="card-link docPage">See details</router-link>
+                    <router-link to="doc" @click="showDoc" class="card-link btn btn-primary docPage">See
+                        details</router-link>
                 </div>
             </div>
             <!-- /CARD -->
@@ -95,14 +98,31 @@ a {
     z-index: 999;
 }
 
+.special-2 {
+    color: lightgreen;
+    text-align: end;
+    margin-top: 1rem;
+    position: absolute;
+    right: 0;
+    z-index: 999;
+}
+
 .ms_btn {
-    background-color: lightgoldenrodyellow;
-    border-radius: 10px;
+    background-color: rgba(0, 0, 0, 0.3);
+    border-radius: 0 10px 10px 0;
+
+
+}
+
+.ms_btn-2 {
+    background-color: rgba(0, 0, 0, 0.3);
+    border-radius: 10px 0 0 10px;
 
 }
 
 img {
     position: relative;
+    border-radius: 5px;
 
 }
 
