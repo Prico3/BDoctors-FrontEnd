@@ -37,7 +37,7 @@ export default {
                 <div class="d-flex align-items-center">
 
                     <img src="../assets/img/logo-removebg-preview.png" alt="">
-                    <a class="navbar-brand text-light fs-1 hvr" href="#">BDoctors</a>
+                    <router-link to="/" class="navbar-brand text-light fs-1 hvr" href="#">BDoctors</router-link>
                 </div>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"

@@ -16,36 +16,32 @@ export default {
             if (this.store.doctorSlug !== "") {
                 axios.get(`http://localhost:8000/api/doc/${this.store.doctorSlug}`).then(resp => {
                     this.docData = resp.data.doctor
-                    console.log(this.docData[2], "ciao");
                 })
 
             } else {
-                console.log(this.myData, "my data else if");
                 axios.get(`http://localhost:8000/api/doc/${this.myData}`).then(resp => {
                     this.docData = resp.data.doctor
-                    console.log(this.docData, "ciao");
                 })
             }
         },
         slugCheck() {
             this.docData = this.store.docData
-            console.log(this.docData)
+
         },
         redeemLocalSave() {
             const savedData = localStorage.getItem('myData');
-            if (savedData !== null) {
-                console.log(savedData, "saved data");
+            if (savedData !== null || savedData !== undefined || savedData !== "") {
                 this.myData = JSON.parse(savedData);
-                console.log(savedData, "my data?");
                 this.docPageApi()
             }
         },
         localSave() {
-            console.log(this.store.doctorSlug, "local save");
             if (this.myData == "") {
                 localStorage.setItem('myData', JSON.stringify(this.store.doctorSlug));
-            } else {
+            } else if (this.store.doctorSlug !== "") {
+                this.myData = this.store.doctorSlug
                 localStorage.setItem('myData', JSON.stringify(this.myData));
+            } else {
             }
         }
     },
@@ -79,12 +75,12 @@ export default {
                         </li>
                     </ul>
                     <h4>Studio address: {{ docData[0].address }}</h4>
-                    <!-- <h4>Review</h4> -->
-                    <!-- <ul>
+                    <h4>Review</h4>
+                    <ul>
                         <li v-for="(review, id) in docData.review" :key="id">
                             <p>{{ review.text }}</p>
                         </li>
-                    </ul> -->
+                    </ul>
                 </div>
             </div>
         </div>
