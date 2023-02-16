@@ -21,6 +21,7 @@ export default {
             } else {
                 axios.get(`http://localhost:8000/api/doc/${this.myData}`).then(resp => {
                     this.docData = resp.data.doctor
+                    console.log(this.docData);
                 })
             }
         },
@@ -43,7 +44,9 @@ export default {
                 localStorage.setItem('myData', JSON.stringify(this.myData));
             } else {
             }
-        }
+        },
+
+
     },
     created() {
         // this.docPageApi()
@@ -63,7 +66,8 @@ export default {
         <div class="container text-light">
             <div class="row">
                 <div class="col">
-                    <img class="img-thumbnail border border-3" src="../assets/img/doctor.jpg" alt="">
+                    <img class="img-thumbnail border border-3" src="`http://localhost:8000/storage/${doctor[0].photo}`"
+                        alt="">
                 </div>
 
                 <div class="col">
@@ -75,21 +79,34 @@ export default {
                         </li>
                     </ul>
                     <h4>Studio address: {{ docData[0].address }}</h4>
-                    <h4>Review</h4>
-                    <ul>
-                        <li v-for="(review, id) in docData.review" :key="id">
-                            <p>{{ review.text }}</p>
-                        </li>
-                    </ul>
                 </div>
             </div>
+            <hr>
         </div>
+
         <div class="container bg-w rounded-2 w-50 mt-5 text-center text-primary p-4">
-            <h4>Il mio CV</h4>
+            <h4>{{ docData[1].curriculum_vitae }}</h4>
             <h4>dati</h4>
             <h4>dati</h4>
             <h4>dati</h4>
         </div>
+
+        <h4>Review</h4>
+        <ul>
+            <li v-for="(review, id) in docData.review" :key="id">
+
+                <p> <span>{{ review.vote }}</span> {{ review.text }}</p>
+            </li>
+        </ul>
+
+
+
+        <div class="mb-3">
+            <label for="exampleFormControlTextarea1" class="form-label"></label>
+            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+        </div>
+
+
 
         <div class="container-fluid bg-w mt-5 d-flex justify-content-between">
 

@@ -45,7 +45,7 @@ export default {
                 <!-- <span>{{ doctor.numReviews }}</span> -->
 
                 <!-- profile photo -->
-                <img v-if="doctor.photo" :src="doctor.photo" alt="">
+                <img v-if="doctor.photo" src="`http://localhost:8000/public/storage/${doctor[0].photo}`" alt="">
 
                 <div class="card-body">
                     <!-- doctor name -->
