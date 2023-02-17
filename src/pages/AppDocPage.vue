@@ -10,6 +10,14 @@ export default {
             docSlug: "",
             myData: "",
             docPhoto: "",
+            reviewValue: "",
+            reviewText: "",
+            userNameValue: "",
+            emailValue: "",
+            textMessageValue: "",
+            userReviewNameValue: "",
+
+
         }
     },
     methods: {
@@ -31,6 +39,32 @@ export default {
 
                 })
             }
+        },
+        submitFormReview() {
+            axios.post(`http://localhost:8000/api/savereview/${this.docData[0].id}`, {
+                reviewUsername: this.userReviewNameValue,
+                reviewVote: this.reviewValue,
+                reviewText: this.reviewText,
+            })
+                .then(response => {
+                    console.log('Successo!', response);
+                })
+                .catch(error => {
+                    console.error('Errore:', error);
+                });
+        },
+        submitFormMessage() {
+            axios.post(`http://localhost:8000/api/savemessage/${this.docData[0].id}`, {
+                messageUsername: this.userNameValue,
+                messageMail: this.emailValue,
+                messageText: this.textMessageValue,
+            })
+                .then(response => {
+                    console.log('Successo!', response);
+                })
+                .catch(error => {
+                    console.error('Errore:', error);
+                });
         },
         slugCheck() {
             this.docData = this.store.docData
@@ -94,71 +128,86 @@ export default {
         <div class="container-fluid">
             <div class="container text-light">
                 <div class="row justify-content-between">
-                    <div class="col-5 bg-col">
-                        <h2 class="p-1">Rate your experience</h2>
+                    <!-- RATE EXPERIENCE -->
+                    <form @submit.prevent="reviewForm" method="POST" class="col-5 bg-col">
+                        <h2>Rate your experience</h2>
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1"
-                                value="option1" checked>
+                            <div class="mb-2">
+                                <input type="userName" class="form-control" id="exampleInputEmail1"
+                                    placeholder="Name and Surname" v-model="userReviewNameValue">
+                            </div>
+                            <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="1"
+                                v-model="reviewValue">
                             <label class="form-check-label" for="exampleRadios1">
                                 <i class="fa-solid fa-star"></i>
                             </label>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2"
-                                value="option2">
+                            <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="2"
+                                v-model="reviewValue">
                             <label class="form-check-label" for="exampleRadios2">
                                 <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
                             </label>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios3"
-                                value="option3">
+                            <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios3" value="3"
+                                v-model="reviewValue">
                             <label class="form-check-label" for="exampleRadios3">
                                 <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
                                     class="fa-solid fa-star"></i>
                             </label>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios3"
-                                value="option3">
+                            <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios3" value="4"
+                                v-model="reviewValue">
                             <label class="form-check-label" for="exampleRadios3">
                                 <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
                                     class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
                             </label>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios3"
-                                value="option3">
+                            <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios3" value="5"
+                                v-model="reviewValue">
                             <label class="form-check-label" for="exampleRadios3">
                                 <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
                                     class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
                                     class="fa-solid fa-star"></i>
                             </label>
                         </div>
-                        <label for="exampleFormControlTextarea1" class="form-label"></label>
+
                         <textarea class="form-control" id="exampleFormControlTextarea1" placeholder="Write here a review..."
-                            rows="2"></textarea>
-                        <button type="submit" class="btn btn-success mt-2 mb-2">Submit</button>
-                    </div>
+                            rows="2" v-model="reviewText"></textarea>
+                        <button type="submit" class="btn btn-success mt-2" @click="submitFormReview()">Submit</button>
+                    </form>
+                    <!-- /RATE EXPERIENCE -->
+
+                    <!-- SEND MESSAGE -->
                     <div class="col-5 bg-col">
-                        <h2 class="p-1">Book your visit</h2>
-                        <div class="form">
+                        <h2>Book your visit</h2>
+                        <form class="form" @submit.prevent="messageForm">
+                            <div class="mb-2">
+                                <input type="userName" class="form-control" id="" placeholder="Name and Surname"
+                                    v-model="userNameValue">
+                            </div>
 
                             <label for="exampleFormControlInput1" class="form-label"></label>
                             <input type="email" class="form-control" id="exampleFormControlInput1"
-                                placeholder="name@example.com">
+                                placeholder="name@example.com" v-model="emailValue">
 
                             <div class="mb-2">
                                 <label for="exampleFormControlTextarea1" class="form-label"></label>
                                 <textarea class="form-control" id="exampleFormControlTextarea1"
-                                    placeholder="Write your requests here..." rows="5"></textarea>
+                                    placeholder="Write your requests here..." rows="5"
+                                    v-model="textMessageValue"></textarea>
                             </div>
                             <div class="d-flex justify-content-end">
-                                <button type="submit" class="btn btn-success  mb-2">Submit</button>
+                                <button type="submit" class="btn btn-success" @click="submitFormMessage()">Submit</button>
                             </div>
-                        </div>
+                        </form>
 
                     </div>
+                    <!-- /SEND MESSAGE -->
+
                 </div>
 
             </div>
