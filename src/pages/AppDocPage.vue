@@ -138,7 +138,7 @@ export default {
                         <label for="exampleFormControlTextarea1" class="form-label"></label>
                         <textarea class="form-control" id="exampleFormControlTextarea1" placeholder="Write here a review..."
                             rows="2"></textarea>
-                        <button type="submit" class="btn btn-success mt-2">Submit</button>
+                        <button type="submit" class="btn btn-success mt-2 mb-2">Submit</button>
                     </div>
                     <div class="col-5 bg-col">
                         <h2>Book your visit</h2>
@@ -154,7 +154,7 @@ export default {
                                     placeholder="Write your requests here..." rows="5"></textarea>
                             </div>
                             <div class="d-flex justify-content-end">
-                                <button type="submit" class="btn btn-success">Submit</button>
+                                <button type="submit" class="btn btn-success  mb-2">Submit</button>
                             </div>
                         </div>
 
