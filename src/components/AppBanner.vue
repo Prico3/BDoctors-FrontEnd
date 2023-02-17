@@ -91,7 +91,7 @@ export default {
             }
         },
         nameSearch() {
-            debugger
+
             if (!this.searchDoc == "") {
                 this.newDocArray = []
                 this.docData.forEach(item => {
