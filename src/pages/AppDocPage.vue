@@ -95,7 +95,7 @@ export default {
             <div class="container text-light">
                 <div class="row justify-content-between">
                     <div class="col-5 bg-col">
-                        <h2>Rate your experience</h2>
+                        <h2 class="p-1">Rate your experience</h2>
                         <div class="form-check">
                             <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1"
                                 value="option1" checked>
@@ -141,7 +141,7 @@ export default {
                         <button type="submit" class="btn btn-success mt-2 mb-2">Submit</button>
                     </div>
                     <div class="col-5 bg-col">
-                        <h2>Book your visit</h2>
+                        <h2 class="p-1">Book your visit</h2>
                         <div class="form">
 
                             <label for="exampleFormControlInput1" class="form-label"></label>
@@ -166,7 +166,7 @@ export default {
 
         <!-- REVIEWS -->
         <div class="container text-light mt-5 py-3 bg-col">
-            <h4>Reviews from other users</h4>
+            <h4 class="p-1">Reviews from other users</h4>
             <div class="review-container">
                 <ul class="list-group list-group-flush">
                     <li class="list-group-item" v-for="(review, id) in docData.review" :key="id">
