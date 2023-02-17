@@ -170,6 +170,7 @@ export default {
                         aria-label="Search">
                     <button href="" class="btn btn-light" type="submit" @click="nameSearch()">Search</button>
                 </form>
+
             </div>
             <!-- /SEARCH -->
 
@@ -206,6 +207,7 @@ export default {
                         <label class="form-check-label" for="flexSwitchCheckChecked">Reviews Number
                         </label>
                     </div>
+
                 </form>
                 <!-- /CHECKBOX -->
 
