@@ -182,7 +182,7 @@ export default {
                 <!-- SPECIALIZATIONS -->
                 <ul class="nav nav-tabs mb-3">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">All</a>
+                        <a class="nav-link text-light" aria-current="page" href="#">All</a>
                     </li>
                     <li v-for="(spec, index) in docSpecs" :key="index" class="nav-item">
                         <a class="nav-link text-light" href="#" @click="saveSpec(spec.id)">{{
