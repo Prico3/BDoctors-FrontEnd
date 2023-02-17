@@ -128,14 +128,9 @@ export default {
         <div class="container-fluid">
             <div class="container text-light">
                 <div class="row justify-content-between">
-<<<<<<< HEAD
                     <!-- RATE EXPERIENCE -->
                     <form @submit.prevent="reviewForm" method="POST" class="col-5 bg-col">
                         <h2>Rate your experience</h2>
-=======
-                    <div class="col-5 bg-col">
-                        <h2 class="p-1">Rate your experience</h2>
->>>>>>> f4b471585bb64f3a8f272265d2e0275eeec620d9
                         <div class="form-check">
                             <div class="mb-2">
                                 <input type="userName" class="form-control" id="exampleInputEmail1"
@@ -181,7 +176,6 @@ export default {
                         </div>
 
                         <textarea class="form-control" id="exampleFormControlTextarea1" placeholder="Write here a review..."
-<<<<<<< HEAD
                             rows="2" v-model="reviewText"></textarea>
                         <button type="submit" class="btn btn-success mt-2" @click="submitFormReview()">Submit</button>
                     </form>
@@ -195,14 +189,6 @@ export default {
                                 <input type="userName" class="form-control" id="" placeholder="Name and Surname"
                                     v-model="userNameValue">
                             </div>
-=======
-                            rows="2"></textarea>
-                        <button type="submit" class="btn btn-success mt-2 mb-2">Submit</button>
-                    </div>
-                    <div class="col-5 bg-col">
-                        <h2 class="p-1">Book your visit</h2>
-                        <div class="form">
->>>>>>> f4b471585bb64f3a8f272265d2e0275eeec620d9
 
                             <label for="exampleFormControlInput1" class="form-label"></label>
                             <input type="email" class="form-control" id="exampleFormControlInput1"
@@ -215,11 +201,7 @@ export default {
                                     v-model="textMessageValue"></textarea>
                             </div>
                             <div class="d-flex justify-content-end">
-<<<<<<< HEAD
                                 <button type="submit" class="btn btn-success" @click="submitFormMessage()">Submit</button>
-=======
-                                <button type="submit" class="btn btn-success  mb-2">Submit</button>
->>>>>>> f4b471585bb64f3a8f272265d2e0275eeec620d9
                             </div>
                         </form>
 
