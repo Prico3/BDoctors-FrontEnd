@@ -55,6 +55,7 @@ export default {
                 axios
                     .get(`http://localhost:8000/api/doc/spec/${this.specId}`)
                     .then(resp => {
+
                         this.docData = [];
                         this.docData = resp.data;
                         const combinedArray = Object.values(this.docData).reduce((acc, curr) => acc.concat(curr), []);
@@ -69,6 +70,7 @@ export default {
                 axios
                     .get(`http://localhost:8000/api/doc/spec/${this.specId}`)
                     .then(resp => {
+
                         this.docData = [];
                         this.docData = resp.data;
                         const combinedArray = Object.values(this.docData).reduce((acc, curr) => acc.concat(curr), []);
@@ -81,6 +83,7 @@ export default {
                 axios
                     .get(`http://localhost:8000/api/doc/spec/${this.specId}`)
                     .then(resp => {
+
                         this.docData = [];
                         this.docData = resp.data;
                         console.log(resp.data);
@@ -88,6 +91,7 @@ export default {
             }
         },
         nameSearch() {
+            debugger
             if (!this.searchDoc == "") {
                 this.newDocArray = []
                 this.docData.forEach(item => {
@@ -108,9 +112,11 @@ export default {
                             break;
                         }
                     }
+
                     if (isNameMatched || isSurnameMatched) {
                         if (!this.newDocArray.includes(item)) {
                             this.newDocArray.push(item);
+                            this.docData = this.newDocArray
                         }
                     }
                 });
@@ -213,11 +219,13 @@ export default {
 
                     </div>
 
+
+
                 </div>
 
             </div>
         </div>
-</div>
+    </div>
 </template>
 
 <style lang="scss" scoped>
