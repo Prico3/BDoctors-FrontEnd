@@ -170,7 +170,7 @@ export default {
             <div class="review-container">
                 <ul class="list-group list-group-flush">
                     <li class="list-group-item" v-for="(review, id) in docData.review" :key="id">
-                        <p> <i class="fa-solid fa-star"></i> {{ review.vote }}</p>
+                        <p> <i class="fa-solid fa-star"></i> {{ review.vote }} from: {{ review.username }}</p>
                         <p> {{ review.text }}</p>
 
                     </li>
@@ -197,7 +197,7 @@ export default {
 
         </div>
 
-</div>
+    </div>
 </template>
 
 <style lang="scss" scoped>
