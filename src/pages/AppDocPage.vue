@@ -57,10 +57,11 @@ export default {
         },
 
         submitFormReview() {
-
+            const reviewIntValue = parseInt(this.reviewValue);
+            console.log(reviewIntValue, "REVIEW VALUE");
             axios.post(`http://localhost:8000/api/savereview/${this.docData[1].id}`, {
                 reviewUsername: this.userReviewNameValue,
-                reviewVote: this.reviewValue,
+                reviewVote: reviewIntValue,
                 reviewText: this.reviewText,
             })
                 .then(response => {
