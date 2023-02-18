@@ -26,6 +26,7 @@ export default {
             if (this.store.doctorSlug !== "") {
                 axios.get(`http://localhost:8000/api/doc/${this.store.doctorSlug}`).then(resp => {
                     this.docData = resp.data.doctor
+                    console.log(this.docData);
                     this.docPhoto = this.docData[1].photo
 
 
@@ -40,9 +41,9 @@ export default {
                 })
             }
         },
-        
+
         submitFormMessage() {
-            axios.post(`http://localhost:8000/api/savemessage/${this.docData[0].id}`, {
+            axios.post(`http://localhost:8000/api/savemessage/${this.docData[1].id}`, {
                 messageUsername: this.userNameValue,
                 messageMail: this.emailValue,
                 messageText: this.textMessageValue,
@@ -56,7 +57,8 @@ export default {
         },
 
         submitFormReview() {
-            axios.post(`http://localhost:8000/api/savereview/${this.docData[0].id}`, {
+
+            axios.post(`http://localhost:8000/api/savereview/${this.docData[1].id}`, {
                 reviewUsername: this.userReviewNameValue,
                 reviewVote: this.reviewValue,
                 reviewText: this.reviewText,
@@ -71,6 +73,7 @@ export default {
 
         slugCheck() {
             this.docData = this.store.docData
+            console.log(this.docData, "ehi ehi ehi");
 
         },
         redeemLocalSave() {
@@ -134,46 +137,46 @@ export default {
                     <!-- RATE EXPERIENCE -->
                     <div class="col-5 bg-col">
                         <h2>Rate your experience</h2>
-                        <form @submit.prevent="reviewForm">
-                        
-                            
+                        <form @submit.prevent="submitFormReview()">
+
+
                             <div class="form-check">
                                 <div class="mb-2">
                                     <input type="userName" class="form-control" id="exampleInputEmail1"
                                         placeholder="Name and Surname" v-model="userReviewNameValue">
                                 </div>
-                                <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="1"
-                                    v-model="reviewValue">
+                                <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1"
+                                    value="1" v-model="reviewValue">
                                 <label class="form-check-label" for="exampleRadios1">
                                     <i class="fa-solid fa-star"></i>
                                 </label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="2"
-                                    v-model="reviewValue">
+                                <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2"
+                                    value="2" v-model="reviewValue">
                                 <label class="form-check-label" for="exampleRadios2">
                                     <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
                                 </label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios3" value="3"
-                                    v-model="reviewValue">
+                                <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios3"
+                                    value="3" v-model="reviewValue">
                                 <label class="form-check-label" for="exampleRadios3">
                                     <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
                                         class="fa-solid fa-star"></i>
                                 </label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios4" value="4"
-                                    v-model="reviewValue">
+                                <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios4"
+                                    value="4" v-model="reviewValue">
                                 <label class="form-check-label" for="exampleRadios4">
                                     <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
                                         class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
                                 </label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios5" value="5"
-                                    v-model="reviewValue">
+                                <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios5"
+                                    value="5" v-model="reviewValue">
                                 <label class="form-check-label" for="exampleRadios5">
                                     <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
                                         class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
@@ -181,9 +184,9 @@ export default {
                                 </label>
                             </div>
 
-                            <textarea class="form-control" id="reviewText" placeholder="Write here a review..."
-                                rows="2" v-model="reviewText"></textarea>
-                            <button type="submit" class="btn btn-success mt-2" @click="submitFormReview()">Submit</button>
+                            <textarea class="form-control" id="reviewText" placeholder="Write here a review..." rows="2"
+                                v-model="reviewText"></textarea>
+                            <button type="submit" class="btn btn-success mt-2">Submit</button>
                         </form>
                     </div>
                     <!-- /RATE EXPERIENCE -->
@@ -191,25 +194,24 @@ export default {
                     <!-- SEND MESSAGE -->
                     <div class="col-5 bg-col">
                         <h2>Book your visit</h2>
-                        <form class="form" @submit.prevent="messageForm">
+                        <form class="form" @submit.prevent="submitFormMessage()">
                             <div class="mb-3">
                                 <input type="userName" class="form-control" id="" placeholder="Name and Surname"
                                     v-model="userNameValue">
                             </div>
 
-                            
+
                             <div class="mb-3">
                                 <input type="email" class="form-control" id="exampleFormControlInput1"
                                     placeholder="your@mail.com" v-model="emailValue">
                             </div>
                             <div class="mb-3">
-                                
-                                <textarea class="form-control" id="message-text"
-                                    placeholder="Write your requests here..." rows="5"
-                                    v-model="textMessageValue"></textarea>
+
+                                <textarea class="form-control" id="message-text" placeholder="Write your requests here..."
+                                    rows="5" v-model="textMessageValue"></textarea>
                             </div>
                             <div class="d-flex justify-content-end">
-                                <button type="submit" class="btn btn-success" @click="submitFormMessage()">Submit</button>
+                                <button type="submit" class="btn btn-success">Submit</button>
                             </div>
                         </form>
 
