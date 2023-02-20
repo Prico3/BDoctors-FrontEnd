@@ -173,25 +173,25 @@ export default {
 
                             <div class="mb-2">
                                 <input type="userName" class="form-control" id="exampleInputEmail1"
-                                    placeholder="Name and Surname" v-model="userReviewNameValue">
+                                required placeholder="Name and Surname" v-model="userReviewNameValue">
                             </div>
                             <div class="form-check">
                                 <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1"
-                                    value="1" v-model="reviewValue">
+                                required value="1" v-model="reviewValue">
                                 <label class="form-check-label" for="exampleRadios1">
                                     <i class="fa-solid fa-star"></i>
                                 </label>
                             </div>
                             <div class="form-check">
                                 <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2"
-                                    value="2" v-model="reviewValue">
+                                required value="2" v-model="reviewValue">
                                 <label class="form-check-label" for="exampleRadios2">
                                     <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
                                 </label>
                             </div>
                             <div class="form-check">
                                 <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios3"
-                                    value="3" v-model="reviewValue">
+                                required value="3" v-model="reviewValue">
                                 <label class="form-check-label" for="exampleRadios3">
                                     <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
                                         class="fa-solid fa-star"></i>
@@ -199,7 +199,7 @@ export default {
                             </div>
                             <div class="form-check">
                                 <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios4"
-                                    value="4" v-model="reviewValue">
+                                required value="4" v-model="reviewValue">
                                 <label class="form-check-label" for="exampleRadios4">
                                     <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
                                         class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
@@ -207,7 +207,7 @@ export default {
                             </div>
                             <div class="form-check">
                                 <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios5"
-                                    value="5" v-model="reviewValue">
+                                required value="5" v-model="reviewValue">
                                 <label class="form-check-label" for="exampleRadios5">
                                     <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
                                         class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
@@ -216,7 +216,7 @@ export default {
                             </div>
 
                             <textarea class="form-control" id="reviewText" placeholder="Write here a review..." rows="2"
-                                v-model="reviewText"></textarea>
+                            required v-model="reviewText"></textarea>
                             <button type="submit" class="btn btn-success mt-2">Submit</button>
                         </form>
                     </div>
@@ -228,18 +228,18 @@ export default {
                         <form class="form" @submit.prevent="submitFormMessage()">
                             <div class="mb-3">
                                 <input type="userName" class="form-control" id="" placeholder="Name and Surname"
-                                    v-model="userNameValue">
+                                required v-model="userNameValue">
                             </div>
 
 
                             <div class="mb-3">
                                 <input type="email" class="form-control" id="exampleFormControlInput1"
-                                    placeholder="your@mail.com" v-model="emailValue">
+                                required placeholder="your@mail.com" v-model="emailValue">
                             </div>
                             <div class="mb-3">
 
                                 <textarea class="form-control" id="message-text" placeholder="Write your requests here..."
-                                    rows="5" v-model="textMessageValue"></textarea>
+                                required rows="5" v-model="textMessageValue"></textarea>
                             </div>
                             <div class="d-flex justify-content-end">
                                 <button type="submit" class="btn btn-success">Submit</button>
