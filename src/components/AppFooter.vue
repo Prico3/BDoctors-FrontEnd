@@ -15,10 +15,10 @@ export default {
                             <a class="nav-link" href="#">Find your Doctor</a>
                         </li>
                         <li class="nav-item me-4">
-                            <a class="nav-link" href="#">How it Works</a>
+                            <a class="nav-link" href="#how-it-works">How it Works</a>
                         </li>
                         <li class="nav-item me-4">
-                            <a class="nav-link" href="#">About Us</a>
+                            <a class="nav-link" href="#about-us">About Us</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="http://localhost:8000/register">Are you a Doctor?</a>
