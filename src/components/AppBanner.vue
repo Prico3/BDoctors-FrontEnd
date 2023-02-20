@@ -163,15 +163,20 @@ export default {
             <!-- /TITLE -->
 
             <!-- SEARCH -->
-            <div class="ms_container d-flex justify-content-center mt-4 ">
-                <form @submit.prevent="filteredDoc()" action="" class="d-flex justify-content-center w-50 p-2"
+            <div class="ms_container d-flex justify-content-center mt-4">
+                <form @submit.prevent="filteredDoc()" action="" class="d-flex justify-content-center w-50 p-2 search-form"
                     role="search">
-                    <input class="form-control me-2" type="search" v-model="searchDoc" placeholder="Find your Doctor"
-                        aria-label="Search">
-                    <button href="" class="btn btn-light" type="submit" @click="nameSearch()">Search</button>
+                    <label for="search-input" class="visually-hidden">Find your Doctor</label>
+                    <div class="input-group">
+                        <input id="search-input" class="form-control form-control-lg me-2 search-input" type="search"
+                            v-model="searchDoc" placeholder="Find your Doctor" aria-label="Search">
+                        <button href="" class="btn btn-primary search-btn" type="submit" @click="nameSearch()">
+                            <i class="fas fa-search"></i> Search
+                        </button>
+                    </div>
                 </form>
-
             </div>
+
             <!-- /SEARCH -->
 
         </div>
@@ -291,6 +296,47 @@ body {
 
     20% {
         transform: translateY(-20px)
+    }
+}
+
+
+
+
+.search-form {
+    animation: slideInFromLeft 3.5s ease forwards;
+}
+
+.search-input {
+    animation: fadeIn 5s ease forwards;
+}
+
+.search-btn {
+    transition: transform 0.3s ease;
+}
+
+.search-btn:hover {
+    transform: scale(1.1);
+}
+
+@keyframes slideInFromLeft {
+    0% {
+        transform: translateX(-50%);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
     }
 }
 </style>
