@@ -73,9 +73,13 @@ export default {
                 messageUsername: this.userNameValue,
                 messageMail: this.emailValue,
                 messageText: this.textMessageValue,
+                
             })
                 .then(response => {
                     console.log('Successo!', response);
+                    this.userNameValue = "";
+                    this.emailValue ="";
+                    this.textMessageValue = "";
                 })
                 .catch(error => {
                     console.error('Errore:', error);
@@ -92,6 +96,10 @@ export default {
             })
                 .then(response => {
                     console.log('Successo!', response);
+                    this.userReviewNameValue ="";
+                    this.reviewValue = "";
+                    this.reviewText = "";
+
                 })
                 .catch(error => {
                     console.error('Errore:', error);

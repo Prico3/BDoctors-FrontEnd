@@ -13,7 +13,7 @@ export default {
 <template>
 
     <!-- HOW IT WORKS -->
-    <div class="container-fluid bg">
+    <div id="how-it-works" class="container-fluid bg">
         <div class="container py-5">
             <!-- <h2 class="text-center fts">How it Works?</h2> -->
 
@@ -63,7 +63,7 @@ export default {
 
 
     <!-- ABOUT US -->
-    <div class="container-fluid bg2">
+    <div id="about-us" class="container-fluid bg2">
         <div class="container py-5">
             <!-- title -->
             <div class="waviy text-center">
