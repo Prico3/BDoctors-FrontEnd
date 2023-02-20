@@ -42,9 +42,9 @@ export default {
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <div class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <div class="navbar-nav ms-auto mb-2 mb-lg-0 d-flex align-items-end">
                         <ul class="navbar-nav">
-                            <li class="nav-item me-4">
+                            <li class="nav-item me-4 d-flex">
                                 <a href="http://localhost:8000" class="btn btn-light text-primary mt-2">Login</a>
                             </li>
                             <li class="nav-item me-4">
