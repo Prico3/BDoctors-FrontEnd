@@ -49,25 +49,34 @@ export default {
                         <i class="fa-solid fa-comment-dots"></i>
                         {{ doctor.numReviews }}
                     </p>
+
+                    <div v-if="doctor.sponsorized" class="special-3">
+
+                        <p>
+                            Sponsorized
+                        </p>
+                    </div>
+
                     <!-- <span>{{ doctor.numReviews }}</span> -->
                     <div class="img-wrapper">
                         <!-- profile photo -->
-                        <img v-if="doctor.photo" :src="`http://localhost:8000/storage/${doctor.photo}`" alt="">
-                        <img v-else src="../assets/img/doctor-1-removebg-preview.png" alt="">
+                        <img v-if="doctor.photo" :src="`http://localhost:8000/storage/${doctor.photo}`" class="img-fluid"
+                            alt="">
+                        <img v-else src="../assets/img/doctor-1-removebg-preview.png" class="img-fluid" alt="">
+                        <!-- sposorship -->
                     </div>
 
                     <div class="card-body">
+
+
                         <!-- doctor name -->
-                        <h5 class="card-title">{{ doctor.name }} {{ doctor.surname }}</h5>
+                        <h5 class="card-title ">Dr. {{ doctor.name }} {{ doctor.surname }}</h5>
                         <!-- doctor address -->
                         <p class="card-text">{{ doctor.studio_address }}</p>
+
                     </div>
 
-                    <ul class="list-group list-group-flush">
-                        <!-- specialization -->
-                        <li class="list-group-item">{{ doctor.specialization }}</li>
 
-                    </ul>
 
                     <div class="card-body">
                         <!-- send message -->
@@ -77,6 +86,7 @@ export default {
                         <!-- see more details -->
                         <router-link to="doc" @click="showDoc" class="card-link btn btn-primary docPage">See
                             details</router-link>
+
                     </div>
                 </div>
                 <!-- /CARD -->
@@ -97,18 +107,32 @@ a {
 .special {
     color: gold;
     text-align: start;
-    margin-top: 1rem;
+    margin-top: 3rem;
     position: absolute;
     z-index: 999;
+
 }
 
 .special-2 {
     color: lightgreen;
     text-align: end;
-    margin-top: 1rem;
+    margin-top: 3rem;
     position: absolute;
     right: 0;
     z-index: 999;
+}
+
+.special-3 {
+    color: white;
+    position: absolute;
+    z-index: 999;
+    text-align: center;
+    width: 100%;
+
+    p {
+        background-color: rgb(255, 215, 0, );
+        border-radius: 7px 7px 0 0;
+    }
 }
 
 .ms_btn {
@@ -131,10 +155,13 @@ a {
         border-radius: 5px;
         max-width: 100%;
 
+
     }
 }
 
 .card {
+
+
     &:hover {
         cursor: pointer;
         transform: scale(1.05);
@@ -149,13 +176,10 @@ a {
     // }
 }
 
-.sponsored {
+// .sponsored {
 
-    border: 20px solid rgb(255, 215, 0, 0.8);
-    border-radius: 15px;
-    background-color: rgb(255, 215, 0, 0.8);
-
-
-
-}
+//     border: 20px solid rgb(255, 215, 0, 0.8);
+//     border-radius: 15px;
+//     background-color: rgb(255, 215, 0, 0.8);
+// }
 </style>
