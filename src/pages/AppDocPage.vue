@@ -29,7 +29,7 @@ export default {
                     this.docData = resp.data.doctor
                     console.log(this.docData);
                     this.docPhoto = this.docData[1].photo
-                    
+
 
 
                 })
@@ -39,7 +39,7 @@ export default {
                     this.docData = resp.data.doctor
                     console.log(this.docData);
                     this.docPhoto = this.docData[1].photo
-                   
+
 
                 })
             }
@@ -48,8 +48,8 @@ export default {
         docPdfApi() {
 
             if (this.store.doctorSlug !== "") {
-              axios.get(`http://localhost:8000/api/doc/${this.store.doctorSlug}`).then(resp => {
-                  //this.docData = resp.data.doctor
+                axios.get(`http://localhost:8000/api/doc/${this.store.doctorSlug}`).then(resp => {
+                    //this.docData = resp.data.doctor
                     console.log(this.docData);
                     this.docPDF = this.docData[1].curriculum_vitae;
 
@@ -63,7 +63,7 @@ export default {
 
                 })
             }
-               
+
 
 
         },
@@ -141,7 +141,10 @@ export default {
         <div class="container text-light">
             <div class="row">
                 <div class="col">
-                    <img class="img-thumbnail border border-3" :src="`http://localhost:8000/storage/${docPhoto}`" alt="">
+                    <!-- <img class="img-thumbnail border border-3" :src="`http://localhost:8000/storage/${docPhoto}`" alt=""> -->
+                    <img v-if="`${docPhoto}`" :src="`http://localhost:8000/storage/${docPhoto}`" class="img-thumbnail"
+                        alt="">
+                    <img v-else src="../assets/img/no-photo.png" class="img-fluid" alt="">
                 </div>
 
                 <div class="col">
@@ -168,11 +171,11 @@ export default {
                         <form @submit.prevent="submitFormReview()">
 
 
+                            <div class="mb-2">
+                                <input type="userName" class="form-control" id="exampleInputEmail1"
+                                    placeholder="Name and Surname" v-model="userReviewNameValue">
+                            </div>
                             <div class="form-check">
-                                <div class="mb-2">
-                                    <input type="userName" class="form-control" id="exampleInputEmail1"
-                                        placeholder="Name and Surname" v-model="userReviewNameValue">
-                                </div>
                                 <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1"
                                     value="1" v-model="reviewValue">
                                 <label class="form-check-label" for="exampleRadios1">
@@ -273,17 +276,12 @@ export default {
         <div class="container bg-w rounded-2 w-50 mt-5 text-center text-primary p-4">
             <div class="row">
                 <div class="col">
-                    <embed 
-                        class="curriculum"
-                        :src="`http://localhost:8000/storage/${docPDF}`" 
-                        type="application/pdf"
-                        id="curriculum_preview"
-                        alt="pdf-curriculum" 
-                       />
+                    <embed class="curriculum" :src="`http://localhost:8000/storage/${docPDF}`" type="application/pdf"
+                        id="curriculum_preview" alt="pdf-curriculum" />
                 </div>
-            
+
             </div>
-            
+
             <h4>dati</h4>
         </div>
 
@@ -345,7 +343,7 @@ i {
 
 .curriculum {
 
-   height:500px;
+    height: 500px;
     width: 100%;
 }
 </style>
