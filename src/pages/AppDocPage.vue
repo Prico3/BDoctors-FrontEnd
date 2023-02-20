@@ -73,12 +73,12 @@ export default {
                 messageUsername: this.userNameValue,
                 messageMail: this.emailValue,
                 messageText: this.textMessageValue,
-                
+
             })
                 .then(response => {
                     console.log('Successo!', response);
                     this.userNameValue = "";
-                    this.emailValue ="";
+                    this.emailValue = "";
                     this.textMessageValue = "";
                 })
                 .catch(error => {
@@ -96,7 +96,7 @@ export default {
             })
                 .then(response => {
                     console.log('Successo!', response);
-                    this.userReviewNameValue ="";
+                    this.userReviewNameValue = "";
                     this.reviewValue = "";
                     this.reviewText = "";
 
@@ -148,10 +148,9 @@ export default {
     <div class="container-fluid bg py-5">
         <div class="container text-light">
             <div class="row">
-                <div class="col">
+                <div class="col text-danger">
                     <!-- <img class="img-thumbnail border border-3" :src="`http://localhost:8000/storage/${docPhoto}`" alt=""> -->
-                    <img v-if="`${docPhoto}`" :src="`http://localhost:8000/storage/${docPhoto}`" class="img-thumbnail"
-                        alt="">
+                    <img v-if="docPhoto" :src="`http://localhost:8000/storage/${docPhoto}`" class="img-thumbnail" alt="">
                     <img v-else src="../assets/img/no-photo.png" class="img-fluid" alt="">
                 </div>
 
@@ -163,7 +162,7 @@ export default {
                             {{ spec }}
                         </li>
                     </ul>
-                    <h4>Studio address: {{ docData[0].address }}</h4>
+                    <h4 class="mb-4">Studio address: {{ docData[0].address }}</h4>
                 </div>
             </div>
             <hr>
@@ -175,31 +174,31 @@ export default {
                 <div class="row justify-content-between">
                     <!-- RATE EXPERIENCE -->
                     <div class="col-5 bg-col">
-                        <h2>Rate your experience</h2>
+                        <h2 class="py-3 text-center">Rate your experience</h2>
                         <form @submit.prevent="submitFormReview()">
 
 
-                            <div class="mb-2">
-                                <input type="userName" class="form-control" id="exampleInputEmail1"
-                                required placeholder="Name and Surname" v-model="userReviewNameValue">
+                            <div class="mb-4">
+                                <input type="userName" class="form-control bgf" id="exampleInputEmail1" required
+                                    placeholder="Name and Surname" v-model="userReviewNameValue">
                             </div>
                             <div class="form-check">
                                 <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1"
-                                required value="1" v-model="reviewValue">
+                                    required value="1" v-model="reviewValue">
                                 <label class="form-check-label" for="exampleRadios1">
                                     <i class="fa-solid fa-star"></i>
                                 </label>
                             </div>
                             <div class="form-check">
                                 <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2"
-                                required value="2" v-model="reviewValue">
+                                    required value="2" v-model="reviewValue">
                                 <label class="form-check-label" for="exampleRadios2">
                                     <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
                                 </label>
                             </div>
                             <div class="form-check">
                                 <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios3"
-                                required value="3" v-model="reviewValue">
+                                    required value="3" v-model="reviewValue">
                                 <label class="form-check-label" for="exampleRadios3">
                                     <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
                                         class="fa-solid fa-star"></i>
@@ -207,15 +206,15 @@ export default {
                             </div>
                             <div class="form-check">
                                 <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios4"
-                                required value="4" v-model="reviewValue">
+                                    required value="4" v-model="reviewValue">
                                 <label class="form-check-label" for="exampleRadios4">
                                     <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
                                         class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
                                 </label>
                             </div>
-                            <div class="form-check">
+                            <div class="form-check mb-4">
                                 <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios5"
-                                required value="5" v-model="reviewValue">
+                                    required value="5" v-model="reviewValue">
                                 <label class="form-check-label" for="exampleRadios5">
                                     <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
                                         class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
@@ -223,34 +222,35 @@ export default {
                                 </label>
                             </div>
 
-                            <textarea class="form-control" id="reviewText" placeholder="Write here a review..." rows="2"
-                            required v-model="reviewText"></textarea>
-                            <button type="submit" class="btn btn-success mt-2">Submit</button>
+                            <textarea class="form-control bgf" id="reviewText" placeholder="Write here a review..." rows="2"
+                                required v-model="reviewText"></textarea>
+                            <button type="submit" class="btn btn-success mt-3 mb-3 ">Submit</button>
                         </form>
                     </div>
                     <!-- /RATE EXPERIENCE -->
 
                     <!-- SEND MESSAGE -->
                     <div class="col-5 bg-col">
-                        <h2>Book your visit</h2>
+                        <h2 class="py-3 text-center">Book your visit</h2>
                         <form class="form" @submit.prevent="submitFormMessage()">
                             <div class="mb-3">
-                                <input type="userName" class="form-control" id="" placeholder="Name and Surname"
-                                required v-model="userNameValue">
+                                <input type="userName" class="form-control bgf" id="" placeholder="Name and Surname"
+                                    required v-model="userNameValue">
                             </div>
 
 
                             <div class="mb-3">
-                                <input type="email" class="form-control" id="exampleFormControlInput1"
-                                required placeholder="your@mail.com" v-model="emailValue">
+                                <input type="email" class="form-control bgf" id="exampleFormControlInput1" required
+                                    placeholder="your@mail.com" v-model="emailValue">
                             </div>
                             <div class="mb-3">
 
-                                <textarea class="form-control" id="message-text" placeholder="Write your requests here..."
-                                required rows="5" v-model="textMessageValue"></textarea>
+                                <textarea class="form-control bgf" id="message-text"
+                                    placeholder="Write your requests here..." required rows="5"
+                                    v-model="textMessageValue"></textarea>
                             </div>
                             <div class="d-flex justify-content-end">
-                                <button type="submit" class="btn btn-success">Submit</button>
+                                <button type="submit" class="btn btn-success mt-4 ">Submit</button>
                             </div>
                         </form>
 
@@ -265,9 +265,9 @@ export default {
         <!-- REVIEWS -->
         <div class="container text-light mt-5 py-3 bg-col text-center">
             <h2 class="p-1">Reviews from other users</h2>
-            <div class="review-container">
+            <div class="review-container bgf">
                 <ul class="list-group list-group-flush">
-                    <li class="list-group-item" v-for="(review, id) in docData.review" :key="id">
+                    <li class="list-group-item bgf" v-for="(review, id) in docData.review" :key="id">
                         <p> <i class="fa-solid fa-star"></i> {{ review.vote }} from: {{ review.username }}</p>
                         <p> {{ review.text }}</p>
 
@@ -285,8 +285,9 @@ export default {
             <h2>Curriculum Vitae</h2>
             <div class="row">
                 <div class="col">
-                    <embed class="curriculum" :src="`http://localhost:8000/storage/${docPDF}`" type="application/pdf"
-                        id="curriculum_preview" alt="pdf-curriculum" />
+                    <embed v-if="docPDF" class="curriculum" :src="`http://localhost:8000/storage/${docPDF}`"
+                        type="application/pdf" id="curriculum_preview" alt="pdf-curriculum" />
+                    <img v-else src="" alt="">
                 </div>
 
             </div>
@@ -350,5 +351,17 @@ i {
 
     height: 500px;
     width: 100%;
+}
+
+.bgf {
+    background-color: rgba(0, 215, 255, 0.5);
+    color: whitesmoke;
+}
+
+::placeholder {
+    /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: whitesmoke;
+    opacity: 1;
+    /* Firefox */
 }
 </style>
