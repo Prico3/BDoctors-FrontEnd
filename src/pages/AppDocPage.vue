@@ -147,8 +147,8 @@ export default {
                     <img v-else src="../assets/img/no-photo.png" class="img-fluid" alt="">
                 </div>
 
-                <div class="col">
-                    <h2>{{ docData[0].name }} {{ docData[0].surname }}</h2>
+                <div class="col bg-col">
+                    <h2 class="text-center"><b>{{ docData[0].name }} {{ docData[0].surname }}</b></h2>
                     <h4> Specialization:</h4>
                     <ul>
                         <li v-for="(spec, index) in docData[2]" :key="index">
@@ -255,8 +255,8 @@ export default {
         </div>
 
         <!-- REVIEWS -->
-        <div class="container text-light mt-5 py-3 bg-col">
-            <h4 class="p-1">Reviews from other users</h4>
+        <div class="container text-light mt-5 py-3 bg-col text-center">
+            <h2 class="p-1">Reviews from other users</h2>
             <div class="review-container">
                 <ul class="list-group list-group-flush">
                     <li class="list-group-item" v-for="(review, id) in docData.review" :key="id">
@@ -273,7 +273,8 @@ export default {
 
 
 
-        <div class="container bg-w rounded-2 w-50 mt-5 text-center text-primary p-4">
+        <div class="container text-light mt-5 py-3 bg-col">
+            <h2>Curriculum Vitae</h2>
             <div class="row">
                 <div class="col">
                     <embed class="curriculum" :src="`http://localhost:8000/storage/${docPDF}`" type="application/pdf"
@@ -281,16 +282,12 @@ export default {
                 </div>
 
             </div>
-
-            <h4>dati</h4>
         </div>
 
 
 
 
-        <div class="container-fluid bg-w mt-5 d-flex justify-content-between">
 
-        </div>
 
     </div>
 </template>
