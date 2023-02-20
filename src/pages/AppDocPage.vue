@@ -10,6 +10,7 @@ export default {
             docSlug: "",
             myData: "",
             docPhoto: "",
+            docPDF: "",
             reviewValue: "",
             reviewText: "",
             userNameValue: "",
@@ -28,6 +29,7 @@ export default {
                     this.docData = resp.data.doctor
                     console.log(this.docData);
                     this.docPhoto = this.docData[1].photo
+                    
 
 
                 })
@@ -37,9 +39,33 @@ export default {
                     this.docData = resp.data.doctor
                     console.log(this.docData);
                     this.docPhoto = this.docData[1].photo
+                   
 
                 })
             }
+        },
+
+        docPdfApi() {
+
+            if (this.store.doctorSlug !== "") {
+              axios.get(`http://localhost:8000/api/doc/${this.store.doctorSlug}`).then(resp => {
+                  //this.docData = resp.data.doctor
+                    console.log(this.docData);
+                    this.docPDF = this.docData[1].curriculum_vitae;
+
+                })
+
+            } else {
+                axios.get(`http://localhost:8000/api/doc/${this.myData}`).then(resp => {
+                    //this.docData = resp.data.doctor
+                    console.log(this.docData);
+                    this.docPDF = this.docData[1].curriculum_vitae;
+
+                })
+            }
+               
+
+
         },
 
         submitFormMessage() {
@@ -81,7 +107,8 @@ export default {
             const savedData = localStorage.getItem('myData');
             if (savedData !== null || savedData !== undefined || savedData !== "") {
                 this.myData = JSON.parse(savedData);
-                this.docPageApi()
+                this.docPageApi();
+                this.docPdfApi();
             }
         },
         localSave() {
@@ -244,9 +271,19 @@ export default {
 
 
         <div class="container bg-w rounded-2 w-50 mt-5 text-center text-primary p-4">
-            <img :src="`http://localhost:8000/storage/${docPhoto}`" alt="">
-            <h4>dati</h4>
-            <h4>dati</h4>
+            <div class="row">
+                <div class="col">
+                    <embed 
+                        class="curriculum"
+                        :src="`http://localhost:8000/storage/${docPDF}`" 
+                        type="application/pdf"
+                        id="curriculum_preview"
+                        alt="pdf-curriculum" 
+                       />
+                </div>
+            
+            </div>
+            
             <h4>dati</h4>
         </div>
 
@@ -304,5 +341,11 @@ i {
     border-radius: 10px;
     background-color: rgba(5, 12, 36, 0.4);
 
+}
+
+.curriculum {
+
+   height:500px;
+    width: 100%;
 }
 </style>

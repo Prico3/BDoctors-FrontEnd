@@ -38,7 +38,7 @@ export default {
         <div class="text-center">
             <!-- CARD -->
 
-            <div class="card">
+            <div class="card" :class="[doctor.sponsorized ? 'sponsored' : '' ]">
                 <!-- star - reviews  -->
                 <p class="special ms_btn px-2" href="">
                     <i class="fa-solid fa-star"></i>
@@ -143,4 +143,11 @@ a {
     //     max-width: 200px;
     // }
 }
+
+.sponsored {
+
+    background-color: gold;
+
+}
+
 </style>
