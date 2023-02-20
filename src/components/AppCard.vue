@@ -49,10 +49,9 @@ export default {
                         <i class="fa-solid fa-comment-dots"></i>
                         {{ doctor.numReviews }}
                     </p>
-
+                    <!-- sponsor -->
                     <div v-if="doctor.sponsorized" class="special-3">
-
-                        <p>
+                        <p class="text-primary">
                             Sponsorized
                         </p>
                     </div>

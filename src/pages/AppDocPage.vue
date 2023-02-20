@@ -17,6 +17,10 @@ export default {
             emailValue: "",
             textMessageValue: "",
             userReviewNameValue: "",
+            showAlertReview: false,
+            showAlertMessage: false,
+
+
 
 
         }
@@ -84,6 +88,11 @@ export default {
                 .catch(error => {
                     console.error('Errore:', error);
                 });
+            this.showAlertMessage = true;
+
+            setTimeout(() => {
+                this.showAlertMessage = false; // hide the alert after 3 seconds
+            }, 5000);
         },
 
         submitFormReview() {
@@ -104,6 +113,12 @@ export default {
                 .catch(error => {
                     console.error('Errore:', error);
                 });
+
+            this.showAlertReview = true;
+
+            setTimeout(() => {
+                this.showAlertReview = false; // hide the alert after 3 seconds
+            }, 5000);
         },
 
         slugCheck() {
@@ -128,10 +143,8 @@ export default {
             } else {
             }
         },
-        // getNewUrl(path) {
 
-        //     return new URL(`http://localhost:8000/storage/${path}`, import.meta.url).href;
-        // }
+
 
 
     },
@@ -225,6 +238,9 @@ export default {
                             <textarea class="form-control bgf" id="reviewText" placeholder="Write here a review..." rows="2"
                                 required v-model="reviewText"></textarea>
                             <button type="submit" class="btn btn-success mt-3 mb-3 ">Submit</button>
+                            <div v-if="showAlertReview" class="alert alert-success">
+                                Thank you for your review!
+                            </div>
                         </form>
                     </div>
                     <!-- /RATE EXPERIENCE -->
@@ -249,8 +265,11 @@ export default {
                                     placeholder="Write your requests here..." required rows="5"
                                     v-model="textMessageValue"></textarea>
                             </div>
-                            <div class="d-flex justify-content-end">
-                                <button type="submit" class="btn btn-success mt-4 ">Submit</button>
+                            <div class="d-flex justify-content-end" id="liveAlertPlaceholder">
+                                <button type="submit" class="btn btn-success mt-4 mb-4 " id="liveAlertBtn">Submit</button>
+                            </div>
+                            <div v-if="showAlertMessage" class="alert alert-success">
+                                Thank you for send a message! The doctor will contanct you as soon as possible.
                             </div>
                         </form>
 
@@ -281,13 +300,13 @@ export default {
 
 
 
-        <div class="container text-light mt-5 py-3 bg-col">
+        <div class="container text-light mt-5 py-3 bg-col text-center">
             <h2>Curriculum Vitae</h2>
             <div class="row">
                 <div class="col">
                     <embed v-if="docPDF" class="curriculum" :src="`http://localhost:8000/storage/${docPDF}`"
                         type="application/pdf" id="curriculum_preview" alt="pdf-curriculum" />
-                    <img v-else src="" alt="">
+                    <img v-else src="../assets/img/NO_CV_FOUNDED-removebg-preview.png" alt="">
                 </div>
 
             </div>
@@ -363,5 +382,20 @@ i {
     color: whitesmoke;
     opacity: 1;
     /* Firefox */
+}
+
+.alert {
+    background-color: rgb(124, 252, 0, 0.5);
+    animation: fadeOut 10s forwards;
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+    }
 }
 </style>
