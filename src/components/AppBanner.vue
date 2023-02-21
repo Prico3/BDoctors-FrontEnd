@@ -15,6 +15,8 @@ export default {
             specId: "",
             mediaVote: false,
             review: false,
+            starMediaVote: "",
+
         }
     },
     components: {
@@ -33,6 +35,27 @@ export default {
                 console.log('ciao');
                 return item.name.toLowerCase().includes(this.searchDoc.toLowerCase())
             })
+        },
+
+        filterMediavote() {
+            if (!this.starMediaVote == "") {
+                axios
+                    .get(`http://localhost:8000/api/doc/spec/${this.specId}`)
+                    .then(resp => {
+                        this.docData = [];
+                        this.newDocArray = [];
+                        this.docData = resp.data;
+                        this.docData.forEach(element => {
+                            element.mediaVote
+                            if (element.mediaVote == this.starMediaVote) {
+                                const mediaVote = element
+                                this.newDocArray.push(mediaVote)
+                            }
+                        });
+
+                        this.docData = this.newDocArray;
+                    })
+            }
         },
         getSpecs() {
             axios
@@ -214,14 +237,14 @@ export default {
                     </div>
 
                     <!-- SELECT -->
-                    <select class="form-select" aria-label="Default select example">
+                    <select v-model="starMediaVote" @click="filterMediavote()" class="form-select"
+                        aria-label="Default select example">
                         <option selected>Filter by Media Vote</option>
                         <option value="1">One Star</option>
                         <option value="2">Two Star</option>
                         <option value="3">Three Star</option>
                         <option value="4">Four Star</option>
                         <option value="5">Five Star</option>
-
                     </select>
                     <!-- /SELECT -->
                 </form>
