@@ -15,7 +15,7 @@ export default {
             specId: "",
             mediaVote: false,
             review: false,
-            starMediaVote: 'Per farci capire',
+            starMediaVote: 'Filter by Media Vote',
 
         }
     },
@@ -274,11 +274,12 @@ export default {
                             <select v-model="starMediaVote" @click="filterMediavote()" class="form-select ms-1"
                                 aria-label="Default select example">
                                 <option selected>Filter by Media Vote</option>
-                                <option value="1">One Star</option>
-                                <option value="2">Two Star</option>
-                                <option value="3">Three Star</option>
-                                <option value="4">Four Star</option>
-                                <option value="5">Five Star</option>
+                                <option value="1">1 <span class="yellow">&#9733</span> <i class="fa-solid fa-star"></i>
+                                </option>
+                                <option value="2">2 <span class="yellow">&#9733</span></option>
+                                <option value="3">3 <span class="yellow">&#9733</span></option>
+                                <option value="4">4 <span class="yellow">&#9733</span></option>
+                                <option value="5">5 <span class="yellow">&#9733</span></option>
                             </select>
 
                         </div>
@@ -417,5 +418,9 @@ body {
 
 .ms_row {
     width: 100%;
+}
+
+.yellow {
+    color: gold;
 }
 </style>
