@@ -57,7 +57,7 @@ export default {
                         
                     })
             }
-            this.orderSponsoredDocs();
+            //this.orderSponsoredDocs();
         },
         getSpecs() {
             axios
@@ -72,7 +72,7 @@ export default {
             this.specId = "";
             this.specId = spec;
             this.specializationApi();
-            this.orderSponsoredDocs();
+            //this.orderSponsoredDocs();
 
         },
         specializationApi() {
@@ -86,7 +86,9 @@ export default {
                         this.docData = resp.data;
                         const combinedArray = Object.values(this.docData).reduce((acc, curr) => acc.concat(curr), []);
                         combinedArray.sort((a, b) => b.mediaVote - a.mediaVote);
-                        this.docData = combinedArray;
+                        const sponsored = combinedArray.filter(doctor => {return doctor.sponsorized === true});
+                        const unSponsored = combinedArray.filter(doctor => {return doctor.sponsorized === false});
+                        this.docData = sponsored.concat(unSponsored);
                         
                         console.log(combinedArray, "mememedia");
                         console.log(this.docData, "ciaoooo");
@@ -102,7 +104,10 @@ export default {
                         this.docData = resp.data;
                         const combinedArray = Object.values(this.docData).reduce((acc, curr) => acc.concat(curr), []);
                         combinedArray.sort((a, b) => b.numReviews - a.numReviews);
-                        this.docData = combinedArray;
+                        
+                        const sponsored = combinedArray.filter(doctor => {return doctor.sponsorized === true});
+                        const unSponsored = combinedArray.filter(doctor => {return doctor.sponsorized === false});
+                        this.docData = sponsored.concat(unSponsored);
                         
                         console.log(combinedArray, "c-c-combined");
                         console.log(this.docData, "ciaoooo");
@@ -114,10 +119,13 @@ export default {
 
                         this.docData = [];
                         this.docData = resp.data;
+                        const sponsored = this.docData.filter(doctor => {return doctor.sponsorized === true});
+                        const unSponsored = this.docData.filter(doctor => {return doctor.sponsorized === false});
+                        this.docData = sponsored.concat(unSponsored);
                         console.log(resp.data);
                     })
             }
-            this.orderSponsoredDocs();
+            //this.orderSponsoredDocs();
         },
         nameSearch() {
 
