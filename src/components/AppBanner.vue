@@ -170,8 +170,8 @@ export default {
 
         orderSponsoredDocs() {
 
-            const sponsored = this.docData.filter(sponsorized => true);
-            const unSponsored = this.docData.filter(sponsorized => false);
+            const sponsored = this.docData.filter(docData.sponsorized == true);
+            const unSponsored = this.docData.filter(docData.sponsorized == false);
             this.docData = sponsored.concat(unSponsored);
 
         }
