@@ -84,6 +84,7 @@ export default {
                         const combinedArray = Object.values(this.docData).reduce((acc, curr) => acc.concat(curr), []);
                         combinedArray.sort((a, b) => b.mediaVote - a.mediaVote);
                         this.docData = combinedArray;
+                        orderSponsoredDocs();
                         console.log(combinedArray, "mememedia");
                         console.log(this.docData, "ciaoooo");
                         console.log(resp.data);
@@ -99,6 +100,7 @@ export default {
                         const combinedArray = Object.values(this.docData).reduce((acc, curr) => acc.concat(curr), []);
                         combinedArray.sort((a, b) => b.numReviews - a.numReviews);
                         this.docData = combinedArray;
+                        orderSponsoredDocs();
                         console.log(combinedArray, "c-c-combined");
                         console.log(this.docData, "ciaoooo");
                     })
@@ -164,8 +166,18 @@ export default {
                 this.specializationApi()
             }
             console.log(this.review);
+        },
+
+        orderSponsoredDocs() {
+
+            const sponsored = this.docData.filter(sponsorized => true);
+            const unSponsored = this.docData.filter(sponsorized => false);
+            this.docData = sponsored.concat(unSponsored);
+
         }
     },
+
+
 
     created() {
         // this.getDoctors()
