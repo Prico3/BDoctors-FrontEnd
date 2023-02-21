@@ -10,9 +10,7 @@ export default {
 }
 </script>
 
-<template>
-
-    <!-- HOW IT WORKS -->
+<template><!-- HOW IT WORKS -->
     <div id="how-it-works" class="container-fluid bg">
         <div class="container py-5">
             <!-- <h2 class="text-center fts">How it Works?</h2> -->
@@ -29,21 +27,22 @@ export default {
                 <div class="row">
                     <!-- send a message -->
                     <div class="text-center p-4 col-lg-4 col-sm-12 hvr">
-                        <img class="mb-3" src="../assets/img/send a message.png" alt="">
-                        <h5>Send a message</h5>
+                        <img class="mb-3 max-w" src="../assets/img/send a message.png" alt="">
+                        <h4>Send a message</h4>
                         <p>You can easily send a message to a doctor you need by the message section in the doctor page.</p>
                     </div>
                     <!-- book the visit -->
                     <div class="text-center p-4 col-lg-4 col-sm-12 hvr">
-                        <img class="mb-3" src="../assets/img/book a visit.png" alt="">
-                        <h5>Book the visit</h5>
-                        <p>Once you send a message, the doctor can contact you via email to reserve your visit!</p>
+                        <img class="mb-3 max-w" src="../assets/img/book a visit.png" alt="">
+                        <h4>Book the visit</h4>
+                        <p>Once you send a message, the doctor will contact you via email to reserve your visit!</p>
                     </div>
                     <!-- leave a review -->
                     <div class="text-center p-4 col-lg-4 col-sm-12 hvr">
-                        <img class="mb-3" src="../assets/img/send a review.png" alt="">
-                        <h5>Leave a review</h5>
-                        <p>You can leave a review to a doctor. More reviews you leave, more the system granted an affordable service</p>
+                        <img class="mb-3 max-w" src="../assets/img/send a review.png" alt="">
+                        <h4>Leave a review</h4>
+                        <p>You can leave a review to a doctor. More reviews you leave, more the system granted an affordable
+                            service.</p>
                     </div>
                 </div>
             </div>
@@ -63,14 +62,22 @@ export default {
             </div>
 
             <div class="d-flex justify-content-around">
-                <div class="row">
-                    <div class="d-flex text-center p-4 col-lg-12 col-sm-12 hvr">
-                        <img class="mb-3" src="../assets/img/about us.png" alt="">
-                        <p>We are a young and pasionate company of web developers named The Code Commanders. Our mission is 
-                            to create some great and beautiful things that can help people. Our greatest satisfaction is the love
-                            and cheer of our customers and partners that grant people health and Psychophisical support. 
+                <div class="row align-items-center">
+                    <div class="text-center p-4 col-lg-6 col-sm-12 hvr">
+                        <img class="mb-3 max-w" src="../assets/img/about us.png" alt="">
+                    </div>
+                    <div class="text-center col-lg-6 col-sm-12">
+                        <p>We are a <b>young</b> and <b>passionate</b> company of web developers named The Code
+                            Commanders.Our mission is
+                            to <b>create</b> some great and <b>beautiful things</b> that can help people. Our greatest
+                            satisfaction is the
+                            <b>love</b>
+                            and cheer of <b>our customers</b> and partners that grant people health and Psychophisical
+                            support.
+
                         </p>
                     </div>
+
                 </div>
             </div>
         </div>
@@ -87,28 +94,29 @@ export default {
             </div>
 
             <div class="d-flex justify-content-around">
-                <div class="row">
-                    <div class="p-4 col-lg-8 col-sm-8 hvr">
+                <div class="row align-items-center">
+                    <div class="p-4 col-lg-6 col-sm-12 hvr">
                         <!-- text -->
                         <p>
                             Sign up and reach new patient. <br>
-                            More than 2 million patients look for their doctor every month on BDoctors, the first site
-                            in Italy for visitors and number of bookings.
+                            More than <b>2 million patients</b> look for their doctor every month on BDoctors, the <b>first
+                                site</b>
+                            in Italy for <b>visitors</b> and number of <b>bookings</b>.
                         </p>
                         <!-- list -->
                         <p class="mt-3">With BDoctors you can:</p>
                         <ul class="ms-4">
-                            <li>Receive bookings from new patients</li>
-                            <li>Improve your online visibility and reputation</li>
-                            <li>You have our staff always available to help you</li>
+                            <li><b>Receive bookings</b> from new patients</li>
+                            <li><b>Improve</b> your <b>online visibility</b> and reputation</li>
+                            <li>You have <b>our staff</b> available <b>24/h</b></li>
                         </ul>
                         <!-- register button -->
                         <a href="http://localhost:8000" class="btn btn-light text-primary mt-3">Register</a>
                     </div>
-                
+
                     <!-- img -->
-                    <div class="d-flex justify-content-center p-4 col-lg-4 col-sm-4 hvr">
-                        <img class="mb-3" src="../assets/img/are you a doctor.png" alt="">
+                    <div class="d-flex justify-content-center p-4 col-lg-6 col-sm-12 hvr">
+                        <img class="mb-3 max-w" src="../assets/img/are you a doctor.png" alt="">
                     </div>
 
                 </div>
@@ -117,15 +125,16 @@ export default {
 
         </div>
     </div>
-    <!-- /ARE YOU A DOCTOR -->
-
-
-</template>
+<!-- /ARE YOU A DOCTOR --></template>
 
 <style lang="scss" scoped>
-img {
-    max-width: 150px;
+.max-w {
+    max-width: 60%;
 }
+
+
+
+
 
 .bg {
     background: rgb(2, 0, 36);
