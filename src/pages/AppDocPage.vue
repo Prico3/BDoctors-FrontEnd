@@ -193,7 +193,7 @@ export default {
 
                             <div class="mb-4">
                                 <input type="userName" class="form-control bgf" id="exampleInputEmail1" required
-                                    placeholder="Name and Surname" v-model="userReviewNameValue">
+                                    placeholder="Name" v-model="userReviewNameValue">
                             </div>
                             <div class="form-check">
                                 <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1"
