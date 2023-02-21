@@ -65,7 +65,7 @@ export default {
             <div class="d-flex justify-content-around">
                 <div class="row">
                     <div class="d-flex text-center p-4 col-lg-12 col-sm-12 hvr">
-                        <img class="mb-3" src="../assets/img/consultazione-sito.svg" alt="">
+                        <img class="mb-3" src="../assets/img/about us.png" alt="">
                         <p>We are a young and pasionate company of web developers named The Code Commanders. Our mission is 
                             to create some great and beautiful things that can help people. Our greatest satisfaction is the love
                             and cheer of our customers and partners that grant people health and Psychophisical support. 
