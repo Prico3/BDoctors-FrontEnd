@@ -254,32 +254,35 @@ export default {
                 <!-- /SPECIALIZATIONS -->
 
                 <!-- CHECKBOX -->
-                <form class="d-flex switch py-4 text-light" action="specializationApi">
-                    <div class="form-check form-switch ms-2">
-                        <input @click="getInputMediaVote()" class="form-check-input" type="checkbox" role="switch"
-                            id="flexSwitchCheckDefault">
-                        <label class="form-check-label" for="flexSwitchCheckDefault">Media Vote
-                        </label>
-                    </div>
-                    <div class="form-check form-switch ms-2">
-                        <input @click="getInputReview()" class="form-check-input" type="checkbox" role="switch"
-                            id="flexSwitchCheckChecked">
-                        <label class="form-check-label" for="flexSwitchCheckChecked">Reviews Number
-                        </label>
+                <form class="d-flex switch p-4 text-light" action="specializationApi">
+                    <div class="row align-items-center">
+                        <div class="form-check form-switch ms-2 col">
+                            <input @click="getInputMediaVote()" class="form-check-input" type="checkbox" role="switch"
+                                id="flexSwitchCheckDefault">
+                            <label class="form-check-label" for="flexSwitchCheckDefault">Media Vote
+                            </label>
+                        </div>
+                        <div class="form-check form-switch ms-2 col">
+                            <input @click="getInputReview()" class="form-check-input" type="checkbox" role="switch"
+                                id="flexSwitchCheckChecked">
+                            <label class="form-check-label" for="flexSwitchCheckChecked">Reviews Number
+                            </label>
+                        </div>
+
+                        <!-- SELECT -->
+                        <div class="col">
+                            <select v-model="starMediaVote" @click="filterMediavote()" class="form-select ms-1"
+                                aria-label="Default select example">
+                                <option selected>Filter by Media Vote</option>
+                                <option value="1">One Star</option>
+                                <option value="2">Two Star</option>
+                                <option value="3">Three Star</option>
+                                <option value="4">Four Star</option>
+                                <option value="5">Five Star</option>
+                            </select>
+                        </div>
                     </div>
 
-                    <!-- SELECT -->
-                    <div>
-                        <select v-model="starMediaVote" @click="filterMediavote()" class="form-select ms-1"
-                            aria-label="Default select example">
-                            <option selected>Filter by Media Vote</option>
-                            <option value="1">One Star</option>
-                            <option value="2">Two Star</option>
-                            <option value="3">Three Star</option>
-                            <option value="4">Four Star</option>
-                            <option value="5">Five Star</option>
-                        </select>
-                    </div>
 
                     <!-- /SELECT -->
                 </form>
