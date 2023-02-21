@@ -88,7 +88,7 @@ export default {
 
             <div class="d-flex justify-content-around">
                 <div class="row">
-                    <div class="p-4 col-lg-6 col-sm-6 hvr">
+                    <div class="p-4 col-lg-8 col-sm-8 hvr">
                         <!-- text -->
                         <p>
                             Sign up and reach new patient. <br>
@@ -105,10 +105,10 @@ export default {
                         <!-- register button -->
                         <a href="http://localhost:8000" class="btn btn-light text-primary mt-3">Register</a>
                     </div>
-
+                
                     <!-- img -->
-                    <div class="d-flex justify-content-center p-4 col-lg-6 col-sm-6 hvr">
-                        <img class="mb-3" src="../assets/img/doctor-1-removebg-preview.png" alt="">
+                    <div class="d-flex justify-content-center p-4 col-lg-4 col-sm-4 hvr">
+                        <img class="mb-3" src="../assets/img/are you a doctor.png" alt="">
                     </div>
 
                 </div>
