@@ -213,8 +213,21 @@ export default {
                         </label>
                     </div>
 
+                    <!-- SELECT -->
+                    <select class="form-select" aria-label="Default select example">
+                        <option selected>Filter by Media Vote</option>
+                        <option value="1">One Star</option>
+                        <option value="2">Two Star</option>
+                        <option value="3">Three Star</option>
+                        <option value="4">Four Star</option>
+                        <option value="5">Five Star</option>
+
+                    </select>
+                    <!-- /SELECT -->
                 </form>
                 <!-- /CHECKBOX -->
+
+
 
 
 
