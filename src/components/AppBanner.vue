@@ -174,11 +174,19 @@ export default {
 
         orderSponsoredDocs() {
 
-            const sponsored = this.docData.filter(doctor => doctor.sponsorized);
-            const unSponsored = this.docData.filter(doctor => !doctor.sponsorized);
+            const sponsored = this.docData.filter(doctor => {return doctor.sponsorized === true});
+            const unSponsored = this.docData.filter(doctor => {return doctor.sponsorized === false});
             this.docData = sponsored.concat(unSponsored);
 
         }
+
+        // filteredDoc() {
+        //     return this.docData.filter(item => {
+        //         console.log('ciao');
+        //         return item.name.toLowerCase().includes(this.searchDoc.toLowerCase())
+        //     })
+        // },
+
     },
 
 
