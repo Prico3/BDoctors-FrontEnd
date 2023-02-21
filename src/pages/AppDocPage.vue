@@ -168,14 +168,15 @@ export default {
                 </div>
 
                 <div class="col bg-col">
-                    <h2 class="text-center"><b>{{ docData[0].name }} {{ docData[0].surname }}</b></h2>
+                    <h2 class="text-center"><b>Dr. {{ docData[0].name }} {{ docData[0].surname }}</b></h2>
                     <h4> Specialization:</h4>
                     <ul>
                         <li v-for="(spec, index) in docData[2]" :key="index">
                             {{ spec }}
                         </li>
                     </ul>
-                    <h4 class="mb-4">Studio address: {{ docData[0].address }}</h4>
+                    <h4 class="">Studio address: </h4>
+                    <p>{{ docData[0].address }}</p>
                 </div>
             </div>
             <hr>
