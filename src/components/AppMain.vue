@@ -31,28 +31,19 @@ export default {
                     <div class="text-center p-4 col-lg-4 col-sm-12 hvr">
                         <img class="mb-3" src="../assets/img/send a message.png" alt="">
                         <h5>Send a message</h5>
-                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fugiat odio officiis id voluptatum
-                            magnam, tempora facere esse nam inventore? Vitae voluptatibus qui officiis voluptates
-                            praesentium? Autem illum impedit officiis iste.</p>
+                        <p>You can easily send a message to a doctor you need by the message section in the doctor page.</p>
                     </div>
                     <!-- book the visit -->
                     <div class="text-center p-4 col-lg-4 col-sm-12 hvr">
                         <img class="mb-3" src="../assets/img/book a visit.png" alt="">
                         <h5>Book the visit</h5>
-                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nam, totam repudiandae? Esse
-                            nostrum,
-                            incidunt illum atque omnis facilis dolorem sapiente provident, minus voluptatum iusto in
-                            modi
-                            minima nobis iure! Vel!</p>
+                        <p>Once you send a message, the doctor can contact you via email to reserve your visit!</p>
                     </div>
                     <!-- leave a review -->
                     <div class="text-center p-4 col-lg-4 col-sm-12 hvr">
                         <img class="mb-3" src="../assets/img/send a review.png" alt="">
                         <h5>Leave a review</h5>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore sit doloribus eius dolore
-                            magni
-                            dolor tempora ipsum incidunt enim? Praesentium, sequi dolor. Beatae a porro deleniti officia
-                            reprehenderit ad optio.</p>
+                        <p>You can leave a review to a doctor. More reviews you leave, more the system granted an affordable service</p>
                     </div>
                 </div>
             </div>
@@ -75,9 +66,10 @@ export default {
                 <div class="row">
                     <div class="d-flex text-center p-4 col-lg-12 col-sm-12 hvr">
                         <img class="mb-3" src="../assets/img/consultazione-sito.svg" alt="">
-                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fugiat odio officiis id voluptatum
-                            magnam, tempora facere esse nam inventore? Vitae voluptatibus qui officiis voluptates
-                            praesentium? Autem illum impedit officiis iste.</p>
+                        <p>We are a young and pasionate company of web developers named The Code Commanders. Our mission is 
+                            to create some great and beautiful things that can help people. Our greatest satisfaction is the love
+                            and cheer of our customers and partners that grant people health and Psychophisical support. 
+                        </p>
                     </div>
                 </div>
             </div>
