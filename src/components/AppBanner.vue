@@ -221,7 +221,6 @@ export default {
                         <option value="3">Three Star</option>
                         <option value="4">Four Star</option>
                         <option value="5">Five Star</option>
-
                     </select>
                     <!-- /SELECT -->
                 </form>

@@ -256,11 +256,11 @@ export default {
 
 
                             <div class="mb-3">
-                                <input type="email" class="form-control bgf" id="exampleFormControlInput1" required
-                                    placeholder="your@mail.com" v-model="emailValue">
+                                <input type="email" class="form-control bgf" id="exampleFormControlInput1"
+                                    pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" required placeholder="your@mail.com"
+                                    v-model="emailValue">
                             </div>
                             <div class="mb-3">
-
                                 <textarea class="form-control bgf" id="message-text"
                                     placeholder="Write your requests here..." required rows="5"
                                     v-model="textMessageValue"></textarea>
