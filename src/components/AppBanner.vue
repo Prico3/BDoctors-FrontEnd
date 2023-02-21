@@ -255,17 +255,17 @@ export default {
 
                 <!-- CHECKBOX -->
                 <form class="d-flex switch p-4 text-light" action="specializationApi">
-                    <div class="row align-items-center">
+                    <div class="row ms_row d-flex justify-content-between align-items-center">
                         <div class="form-check form-switch ms-2 col">
                             <input @click="getInputMediaVote()" class="form-check-input" type="checkbox" role="switch"
                                 id="flexSwitchCheckDefault">
-                            <label class="form-check-label" for="flexSwitchCheckDefault">Media Vote
+                            <label class="form-check-label" for="flexSwitchCheckDefault">Order by Media Vote
                             </label>
                         </div>
                         <div class="form-check form-switch ms-2 col">
                             <input @click="getInputReview()" class="form-check-input" type="checkbox" role="switch"
                                 id="flexSwitchCheckChecked">
-                            <label class="form-check-label" for="flexSwitchCheckChecked">Reviews Number
+                            <label class="form-check-label" for="flexSwitchCheckChecked">Order by Reviews Number
                             </label>
                         </div>
 
@@ -273,7 +273,7 @@ export default {
                         <div class="col d-flex">
                             <select v-model="starMediaVote" @click="filterMediavote()" class="form-select ms-1"
                                 aria-label="Default select example">
-                                <option selected>Per farci capire</option>
+                                <option selected>Filter by Media Vote</option>
                                 <option value="1">One Star</option>
                                 <option value="2">Two Star</option>
                                 <option value="3">Three Star</option>
@@ -413,5 +413,9 @@ body {
     100% {
         opacity: 1;
     }
+}
+
+.ms_row {
+    width: 100%;
 }
 </style>
