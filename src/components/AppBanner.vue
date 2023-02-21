@@ -15,7 +15,7 @@ export default {
             specId: "",
             mediaVote: false,
             review: false,
-            starMediaVote: "",
+            starMediaVote: 'Per farci capire',
 
         }
     },
@@ -270,16 +270,17 @@ export default {
                         </div>
 
                         <!-- SELECT -->
-                        <div class="col">
+                        <div class="col d-flex">
                             <select v-model="starMediaVote" @click="filterMediavote()" class="form-select ms-1"
                                 aria-label="Default select example">
-                                <option selected>Filter by Media Vote</option>
+                                <option selected>Per farci capire</option>
                                 <option value="1">One Star</option>
                                 <option value="2">Two Star</option>
                                 <option value="3">Three Star</option>
                                 <option value="4">Four Star</option>
                                 <option value="5">Five Star</option>
                             </select>
+
                         </div>
                     </div>
 
