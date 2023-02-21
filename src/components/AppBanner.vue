@@ -54,8 +54,10 @@ export default {
                         });
 
                         this.docData = this.newDocArray;
+                        
                     })
             }
+            this.orderSponsoredDocs();
         },
         getSpecs() {
             axios
@@ -70,6 +72,7 @@ export default {
             this.specId = "";
             this.specId = spec;
             this.specializationApi();
+            this.orderSponsoredDocs();
 
         },
         specializationApi() {
@@ -84,7 +87,7 @@ export default {
                         const combinedArray = Object.values(this.docData).reduce((acc, curr) => acc.concat(curr), []);
                         combinedArray.sort((a, b) => b.mediaVote - a.mediaVote);
                         this.docData = combinedArray;
-                        orderSponsoredDocs();
+                        
                         console.log(combinedArray, "mememedia");
                         console.log(this.docData, "ciaoooo");
                         console.log(resp.data);
@@ -100,7 +103,7 @@ export default {
                         const combinedArray = Object.values(this.docData).reduce((acc, curr) => acc.concat(curr), []);
                         combinedArray.sort((a, b) => b.numReviews - a.numReviews);
                         this.docData = combinedArray;
-                        orderSponsoredDocs();
+                        
                         console.log(combinedArray, "c-c-combined");
                         console.log(this.docData, "ciaoooo");
                     })
@@ -114,6 +117,7 @@ export default {
                         console.log(resp.data);
                     })
             }
+            this.orderSponsoredDocs();
         },
         nameSearch() {
 
