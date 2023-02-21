@@ -54,7 +54,7 @@ export default {
                         });
 
                         this.docData = this.newDocArray;
-                        
+
                     })
             }
             //this.orderSponsoredDocs();
@@ -86,10 +86,10 @@ export default {
                         this.docData = resp.data;
                         const combinedArray = Object.values(this.docData).reduce((acc, curr) => acc.concat(curr), []);
                         combinedArray.sort((a, b) => b.mediaVote - a.mediaVote);
-                        const sponsored = combinedArray.filter(doctor => {return doctor.sponsorized === true});
-                        const unSponsored = combinedArray.filter(doctor => {return doctor.sponsorized === false});
+                        const sponsored = combinedArray.filter(doctor => { return doctor.sponsorized === true });
+                        const unSponsored = combinedArray.filter(doctor => { return doctor.sponsorized === false });
                         this.docData = sponsored.concat(unSponsored);
-                        
+
                         console.log(combinedArray, "mememedia");
                         console.log(this.docData, "ciaoooo");
                         console.log(resp.data);
@@ -104,11 +104,11 @@ export default {
                         this.docData = resp.data;
                         const combinedArray = Object.values(this.docData).reduce((acc, curr) => acc.concat(curr), []);
                         combinedArray.sort((a, b) => b.numReviews - a.numReviews);
-                        
-                        const sponsored = combinedArray.filter(doctor => {return doctor.sponsorized === true});
-                        const unSponsored = combinedArray.filter(doctor => {return doctor.sponsorized === false});
+
+                        const sponsored = combinedArray.filter(doctor => { return doctor.sponsorized === true });
+                        const unSponsored = combinedArray.filter(doctor => { return doctor.sponsorized === false });
                         this.docData = sponsored.concat(unSponsored);
-                        
+
                         console.log(combinedArray, "c-c-combined");
                         console.log(this.docData, "ciaoooo");
                     })
@@ -119,8 +119,8 @@ export default {
 
                         this.docData = [];
                         this.docData = resp.data;
-                        const sponsored = this.docData.filter(doctor => {return doctor.sponsorized === true});
-                        const unSponsored = this.docData.filter(doctor => {return doctor.sponsorized === false});
+                        const sponsored = this.docData.filter(doctor => { return doctor.sponsorized === true });
+                        const unSponsored = this.docData.filter(doctor => { return doctor.sponsorized === false });
                         this.docData = sponsored.concat(unSponsored);
                         console.log(resp.data);
                     })
@@ -182,8 +182,8 @@ export default {
 
         orderSponsoredDocs() {
 
-            const sponsored = this.docData.filter(doctor => {return doctor.sponsorized === true});
-            const unSponsored = this.docData.filter(doctor => {return doctor.sponsorized === false});
+            const sponsored = this.docData.filter(doctor => { return doctor.sponsorized === true });
+            const unSponsored = this.docData.filter(doctor => { return doctor.sponsorized === false });
             this.docData = sponsored.concat(unSponsored);
 
         }
@@ -254,7 +254,7 @@ export default {
                 <!-- /SPECIALIZATIONS -->
 
                 <!-- CHECKBOX -->
-                <form class="switch py-4 text-light" action="specializationApi">
+                <form class="d-flex switch py-4 text-light" action="specializationApi">
                     <div class="form-check form-switch ms-2">
                         <input @click="getInputMediaVote()" class="form-check-input" type="checkbox" role="switch"
                             id="flexSwitchCheckDefault">
@@ -269,15 +269,18 @@ export default {
                     </div>
 
                     <!-- SELECT -->
-                    <select v-model="starMediaVote" @click="filterMediavote()" class="form-select"
-                        aria-label="Default select example">
-                        <option selected>Filter by Media Vote</option>
-                        <option value="1">One Star</option>
-                        <option value="2">Two Star</option>
-                        <option value="3">Three Star</option>
-                        <option value="4">Four Star</option>
-                        <option value="5">Five Star</option>
-                    </select>
+                    <div>
+                        <select v-model="starMediaVote" @click="filterMediavote()" class="form-select ms-1"
+                            aria-label="Default select example">
+                            <option selected>Filter by Media Vote</option>
+                            <option value="1">One Star</option>
+                            <option value="2">Two Star</option>
+                            <option value="3">Three Star</option>
+                            <option value="4">Four Star</option>
+                            <option value="5">Five Star</option>
+                        </select>
+                    </div>
+
                     <!-- /SELECT -->
                 </form>
                 <!-- /CHECKBOX -->
