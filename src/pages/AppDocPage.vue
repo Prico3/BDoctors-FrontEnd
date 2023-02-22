@@ -176,7 +176,7 @@ export default {
                         </li>
                     </ul>
                     <h4 class="">Studio address: </h4>
-                    <p>{{ docData[0].address }}</p>
+                    <p>{{ docData[1].studio_address }}</p>
                 </div>
             </div>
             <hr>
