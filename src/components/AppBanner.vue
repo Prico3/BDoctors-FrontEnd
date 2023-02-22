@@ -45,6 +45,7 @@ export default {
                         this.docData = [];
                         this.newDocArray = [];
                         this.docData = resp.data;
+                        console.log(this.docData);
                         this.docData.forEach(element => {
                             element.mediaVote
                             if (element.mediaVote == this.starMediaVote) {
@@ -87,6 +88,7 @@ export default {
                         const combinedArray = Object.values(this.docData).reduce((acc, curr) => acc.concat(curr), []);
                         combinedArray.sort((a, b) => b.mediaVote - a.mediaVote);
                         const sponsored = combinedArray.filter(doctor => { return doctor.sponsorized === true });
+                        console.log(doctor.sponsorized); //IMPORTANTE NON RIMUOVERE
                         const unSponsored = combinedArray.filter(doctor => { return doctor.sponsorized === false });
                         this.docData = sponsored.concat(unSponsored);
 
@@ -106,6 +108,7 @@ export default {
                         combinedArray.sort((a, b) => b.numReviews - a.numReviews);
 
                         const sponsored = combinedArray.filter(doctor => { return doctor.sponsorized === true });
+                        console.log(doctor.sponsorized); //IMPORTANTE NON RIMUOVERE
                         const unSponsored = combinedArray.filter(doctor => { return doctor.sponsorized === false });
                         this.docData = sponsored.concat(unSponsored);
 
@@ -120,7 +123,7 @@ export default {
                         this.docData = [];
                         this.docData = resp.data;
                         const sponsored = this.docData.filter(doctor => { return doctor.sponsorized === true });
-                        console.log(doctor.sponsorized);
+                        console.log(doctor.sponsorized); //IMPORTANTE NON RIMUOVERE
                         const unSponsored = this.docData.filter(doctor => { return doctor.sponsorized === false });
                         this.docData = sponsored.concat(unSponsored);
                         console.log(resp.data);
