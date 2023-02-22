@@ -48,7 +48,7 @@ export default {
                         console.log(this.docData);
                         this.docData.forEach(element => {
                             element.mediaVote
-                            if (element.mediaVote == this.starMediaVote) {
+                            if (Math.floor(element.mediaVote) == this.starMediaVote) {
                                 const mediaVote = element
                                 this.newDocArray.push(mediaVote)
                             }
