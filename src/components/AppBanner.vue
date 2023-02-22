@@ -120,6 +120,7 @@ export default {
                         this.docData = [];
                         this.docData = resp.data;
                         const sponsored = this.docData.filter(doctor => { return doctor.sponsorized === true });
+                        console.log(doctor.sponsorized);
                         const unSponsored = this.docData.filter(doctor => { return doctor.sponsorized === false });
                         this.docData = sponsored.concat(unSponsored);
                         console.log(resp.data);
