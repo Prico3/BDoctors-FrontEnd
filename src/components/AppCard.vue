@@ -16,16 +16,13 @@ export default {
         }
     },
     methods: {
-        functionDoc() {
-            console.log(this.doctor, "doctor");
 
-        },
         showDoc() {
             this.store.doctorSlug = this.detailsDoc
         },
     },
     created() {
-        this.functionDoc()
+
 
     }
 

@@ -84,16 +84,23 @@ export default {
                     .then(resp => {
 
                         this.docData = [];
-                        this.docData = resp.data;
-                        const combinedArray = Object.values(this.docData).reduce((acc, curr) => acc.concat(curr), []);
+                        debugger
+                        console.log(this.docData, "VUOTO");
+                        let biscotto = resp.data;
+                        // console.log(this.docData[0].sponsorized, "array dottori");
+                        const combinedArray = Object.values(biscotto).reduce((acc, curr) => acc.concat(curr), []);
                         combinedArray.sort((a, b) => b.mediaVote - a.mediaVote);
-                        const sponsored = combinedArray.filter(doctor => { return doctor.sponsorized === true });
-                        console.log(doctor.sponsorized); //IMPORTANTE NON RIMUOVERE
-                        const unSponsored = combinedArray.filter(doctor => { return doctor.sponsorized === false });
+                        console.log(combinedArray, "combined");
+
+
+                        const sponsored = combinedArray.filter(doctor => { return doctor.sponsorized == true });
+
+                        console.log(sponsored, "sponsored");
+                        //console.log(doctor.sponsorized); //IMPORTANTE NON RIMUOVERE
+                        const unSponsored = combinedArray.filter(doctor => { return doctor.sponsorized == false });
                         this.docData = sponsored.concat(unSponsored);
 
-                        console.log(combinedArray, "mememedia");
-                        console.log(this.docData, "ciaoooo");
+                        console.log(this.docData, "DOTTORE GIUSTO");
                         console.log(resp.data);
                     })
             } else if (this.review) {
@@ -103,14 +110,24 @@ export default {
                     .then(resp => {
 
                         this.docData = [];
-                        this.docData = resp.data;
-                        const combinedArray = Object.values(this.docData).reduce((acc, curr) => acc.concat(curr), []);
+                        debugger
+                        console.log(this.docData, "VUOTO");
+                        let biscotto = resp.data;
+                        // console.log(this.docData, "dottori");
+                        const combinedArray = Object.values(biscotto).reduce((acc, curr) => acc.concat(curr), []);
                         combinedArray.sort((a, b) => b.numReviews - a.numReviews);
+                        // console.log(this.docData, "combined");
 
-                        const sponsored = combinedArray.filter(doctor => { return doctor.sponsorized === true });
-                        console.log(doctor.sponsorized); //IMPORTANTE NON RIMUOVERE
-                        const unSponsored = combinedArray.filter(doctor => { return doctor.sponsorized === false });
+
+                        const sponsored = combinedArray.filter(doctor => { return doctor.sponsorized == true });
+
+                        console.log(sponsored, "sponsored");
+                        //console.log(doctor.sponsorized); //IMPORTANTE NON RIMUOVERE
+                        const unSponsored = combinedArray.filter(doctor => { return doctor.sponsorized == false });
                         this.docData = sponsored.concat(unSponsored);
+
+                        console.log(this.docData, "DOTTORE GIUSTO");
+                        console.log(resp.data);
 
                         console.log(combinedArray, "c-c-combined");
                         console.log(this.docData, "ciaoooo");
@@ -120,11 +137,17 @@ export default {
                     .get(`http://localhost:8000/api/doc/spec/${this.specId}`)
                     .then(resp => {
 
+
                         this.docData = [];
-                        this.docData = resp.data;
-                        const sponsored = this.docData.filter(doctor => { return doctor.sponsorized === true });
-                        console.log(doctor.sponsorized); //IMPORTANTE NON RIMUOVERE
-                        const unSponsored = this.docData.filter(doctor => { return doctor.sponsorized === false });
+                        let biscotto = resp.data;
+                        console.log(this.docData, "VUOTO");
+                        // this.docData = resp.data;
+                        console.log(biscotto, "dottori");
+                        const sponsored = biscotto.filter(docData => { return docData.sponsorized == 1 });
+                        console.log(sponsored, "SPONSORED")
+                        // console.log(doctor.sponsorized); //IMPORTANTE NON RIMUOVERE
+                        const unSponsored = biscotto.filter(docData => { return docData.sponsorized == 0 });
+                        console.log(unSponsored, "UNSPONSORED")
                         this.docData = sponsored.concat(unSponsored);
                         console.log(resp.data);
                     })
