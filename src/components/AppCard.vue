@@ -59,9 +59,12 @@ export default {
                     <!-- <span>{{ doctor.numReviews }}</span> -->
                     <div class="img-wrapper p-4">
                         <!-- profile photo -->
-                        <img v-if="doctor.photo" :src="`http://localhost:8000/storage/${doctor.photo}`"
-                            class="img-thumbnail" alt="">
-                        <img v-else src="../assets/img/no-photo.png" class="img-fluid" alt="">
+                        <div>
+
+                            <img v-if="doctor.photo" :src="`http://localhost:8000/storage/${doctor.photo}`"
+                                class="img-thumbnail" alt="">
+                            <img v-else src="../assets/img/no-photo.png" class="img-fluid" alt="">
+                        </div>
                         <!-- sposorship -->
                     </div>
 
@@ -148,7 +151,7 @@ a {
 }
 
 .img-wrapper {
-    max-height: 205px;
+    // max-height: 205px;
 
     img {
         position: relative;
